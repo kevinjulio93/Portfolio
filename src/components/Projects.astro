@@ -14,12 +14,12 @@ import { projects } from "../data/portfolio";
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6 md:gap-8 stagger-children">
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
       {projects.filter(p => p.featured).map((project, pIdx) => (
         <a
           href={project.demoUrl || project.githubUrl}
           target="_blank"
-          class="group relative overflow-hidden rounded-3xl border border-border/50 bg-gradient-to-br from-background/40 to-background/20 hover:bg-background transition-all duration-500 hover:shadow-[0_8px_40px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 hover:border-primary/20"
+          class="project-card group relative overflow-hidden rounded-3xl border border-border/50 bg-gradient-to-br from-background/40 to-background/20 hover:bg-background transition-all duration-500 hover:shadow-[0_8px_40px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 hover:border-primary/20"
         >
           <!-- Gradient overlay on hover -->
           <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-violet-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

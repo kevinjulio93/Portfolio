@@ -24,19 +24,9 @@ import Footer from '../components/Footer.astro';
 	</main>
 	<Footer />
 
-	<!-- Scroll reveal animation script -->
+	<!-- GSAP Animations -->
 	<script>
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-					}
-				});
-			},
-			{ threshold: 0.1 }
-		);
-
-		document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+		import { initAnimations } from '../scripts/animations';
+		document.addEventListener('astro:page-load', initAnimations);
 	</script>
 </Layout>
