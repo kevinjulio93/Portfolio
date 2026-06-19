@@ -1,0 +1,52 @@
+---
+import { personalInfo, softSkills } from "../data/portfolio";
+---
+
+<section id="about" class="py-32 relative">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 animate-slide-up">
+        <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="about.section">Sobre mí</span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4 mb-8">
+          <span data-i18n="about.title">IT Engineer con 8+ años de experiencia</span>
+        </h2>
+      </div>
+
+      <p class="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 animate-slide-up animate-delay-1" data-i18n="about.bio">
+        {personalInfo.bio}
+      </p>
+
+      <!-- Educación -->
+      <div class="flex flex-col sm:flex-row items-start gap-4 p-6 rounded-2xl border border-border/50 bg-gradient-to-br from-muted/30 to-transparent animate-border-glow animate-slide-up animate-delay-2">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-emerald-500/20 flex items-center justify-center shrink-0 border border-primary/10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div>
+          <p class="font-medium text-sm">{personalInfo.education.degree}</p>
+          <p class="text-sm text-muted-foreground">{personalInfo.education.university} · {personalInfo.education.year}</p>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="mt-12 animate-slide-up animate-delay-3">
+        <h3 class="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider" data-i18n="about.soft_skills">Soft Skills</h3>
+        <div class="flex flex-wrap gap-2 stagger-children">
+          {softSkills.map((skill) => (
+            <span class="group px-3 py-1.5 rounded-lg border border-border/40 bg-background/30 text-xs text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-background/60 transition-all hover:-translate-y-0.5">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tech icons -->
+      <div class="flex flex-wrap justify-center gap-3 mt-10 stagger-children">
+        {["React", "Angular", "TypeScript", "Docker", "Kubernetes", "Linux", "Python"].map((tech) => (
+          <span class="group px-4 py-2 rounded-full bg-secondary/50 border border-border/50 text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_12px_hsl(var(--primary)/0.15)] hover:scale-105 cursor-default">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

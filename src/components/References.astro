@@ -1,0 +1,43 @@
+---
+import { references } from "../data/portfolio";
+---
+
+<section id="references" class="py-32 relative bg-muted/30">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 animate-slide-up">
+      <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="references.section">Referencias</span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4" data-i18n="references.title">
+        Lo que dicen mis colegas
+      </h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 stagger-children">
+      {references.map((ref) => (
+        <div class="p-6 rounded-2xl border border-border/50 bg-gradient-to-br from-background/40 to-background/20 hover:bg-background hover:border-primary/20 transition-all hover:-translate-y-1 hover:shadow-md">
+          <div class="flex items-start gap-4">
+            <!-- Avatar placeholder -->
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-emerald-500/20 flex items-center justify-center shrink-0 border border-primary/10">
+              <span class="text-sm font-bold bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent">
+                {ref.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+              </span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="font-medium text-sm truncate">{ref.name}</p>
+              <p class="text-xs text-primary">{ref.role}</p>
+              <div class="flex flex-col gap-1 mt-3 text-xs text-muted-foreground">
+                <a href={`tel:${ref.phone}`} class="hover:text-foreground transition-colors inline-flex items-center gap-1.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  {ref.phone}
+                </a>
+                <a href={`mailto:${ref.email}`} class="hover:text-foreground transition-colors inline-flex items-center gap-1.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <span class="truncate">{ref.email}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

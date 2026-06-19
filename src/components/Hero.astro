@@ -1,0 +1,123 @@
+---
+import { personalInfo } from "../data/portfolio";
+---
+
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+  <!-- Animated gradient orbs background -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="gradient-orb w-[500px] h-[500px] -top-40 -left-20 bg-gradient-to-br from-blue-500/30 via-cyan-400/20 to-transparent animate-float-slow" />
+    <div class="gradient-orb w-[400px] h-[400px] -bottom-32 -right-20 bg-gradient-to-tl from-violet-500/25 via-purple-400/15 to-transparent animate-float-delayed" />
+    <div class="gradient-orb w-[350px] h-[350px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-tr from-emerald-500/15 via-teal-400/10 to-transparent animate-float-slower" />
+  </div>
+
+  <!-- Static gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background pointer-events-none" />
+
+  <!-- Floating tech icons -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none hidden md:block" aria-hidden="true">
+    <!-- React -->
+    <span class="absolute top-[18%] left-[6%] opacity-40 animate-float">
+      <svg width="44" height="44" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" stroke-width="0.8" transform="rotate(0 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" stroke-width="0.8" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" stroke-width="0.8" transform="rotate(120 12 12)"/></svg>
+    </span>
+    <!-- TypeScript -->
+    <span class="absolute top-[30%] right-[8%] opacity-40 animate-float-delayed">
+      <svg width="40" height="40" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="#3178C6"/><path d="M7 16h10" stroke="#fff" stroke-width="1.5" fill="none"/><path d="M12 8v8" stroke="#fff" stroke-width="1.5" fill="none"/><path d="M14 8v3h3" stroke="#fff" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
+    </span>
+    <!-- Docker -->
+    <span class="absolute top-[60%] left-[4%] opacity-40 animate-float-slower">
+      <svg width="42" height="42" viewBox="0 0 24 24"><rect x="3" y="10" width="3" height="3" rx="0.5" fill="#2496ED"/><rect x="7" y="10" width="3" height="3" rx="0.5" fill="#2496ED"/><rect x="11" y="10" width="3" height="3" rx="0.5" fill="#2496ED"/><rect x="7" y="6" width="3" height="3" rx="0.5" fill="#2496ED"/><rect x="11" y="6" width="3" height="3" rx="0.5" fill="#2496ED"/><rect x="15" y="10" width="3" height="3" rx="0.5" fill="#2496ED"/><path d="M3 16c0 2.2 1.8 4 4 4h10c2.8 0 5-2.2 5-5 0-1.7-1.3-3-3-3H3Z" fill="#2496ED" opacity="0.15"/><path d="M21 12c0 1.7-1.3 3-3 3h-1" stroke="#2496ED" stroke-width="1" fill="none"/></svg>
+    </span>
+    <!-- Kubernetes -->
+    <span class="absolute top-[13%] right-[18%] opacity-40 animate-float">
+      <svg width="38" height="38" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#326CE5" opacity="0.1"/><circle cx="12" cy="12" r="9" stroke="#326CE5" stroke-width="0.6" fill="none"/><circle cx="12" cy="12" r="3" fill="none" stroke="#326CE5" stroke-width="1.2"/><path d="M12 4v4" stroke="#326CE5" stroke-width="1" fill="none"/><path d="M12 16v4" stroke="#326CE5" stroke-width="1" fill="none"/><path d="M4 12h4" stroke="#326CE5" stroke-width="1" fill="none"/><path d="M16 12h4" stroke="#326CE5" stroke-width="1" fill="none"/></svg>
+    </span>
+    <!-- Python -->
+    <span class="absolute top-[74%] right-[6%] opacity-40 animate-float-delayed">
+      <svg width="38" height="38" viewBox="0 0 24 24"><path d="M12 2h4v4" fill="none" stroke="#3776AB" stroke-width="1.2" stroke-linejoin="round"/><path d="M12 22H8v-4" fill="none" stroke="#3776AB" stroke-width="1.2" stroke-linejoin="round"/><rect x="4" y="8" width="16" height="8" rx="2" fill="#3776AB" opacity="0.15"/><path d="M8 10h8" stroke="#3776AB" stroke-width="1" fill="none"/><path d="M8 14h6" stroke="#3776AB" stroke-width="1" fill="none"/><circle cx="8" cy="10" r="1" fill="#3776AB"/></svg>
+    </span>
+    <!-- Angular -->
+    <span class="absolute bottom-[20%] left-[10%] opacity-40 animate-float-slow">
+      <svg width="38" height="38" viewBox="0 0 24 24"><path d="M12 2 2 7l2 11 8 4 8-4 2-11Z" fill="#DD0031" opacity="0.15"/><path d="M12 2 2 7l2 11 8 4 8-4 2-11Z" stroke="#DD0031" stroke-width="0.8" fill="none"/><path d="M9 9h6l-3 8Z" fill="#DD0031" opacity="0.2"/><path d="M9 9h6l-3 8" stroke="#DD0031" stroke-width="0.8" fill="none"/></svg>
+    </span>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 py-24 md:py-28 text-center relative">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-medium mb-6 border animate-border-glow">
+      <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+      <span data-i18n="hero.available">Disponible para proyectos</span>
+    </div>
+
+    <!-- Name & Role - Now inline without forced break -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-5 animate-slide-up">
+      <span class="bg-gradient-to-r from-foreground via-primary to-foreground/70 bg-clip-text text-transparent animate-shimmer block sm:inline">
+        {personalInfo.name}
+      </span>
+      <span class="hidden sm:inline mx-2 text-muted-foreground/30">·</span>
+      <span class="bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-shift block sm:inline text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
+        {personalInfo.role}
+      </span>
+    </h1>
+
+    <!-- Bio -->
+    <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up animate-delay-2" data-i18n="about.shortBio">
+      {personalInfo.shortBio}
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-wrap items-center justify-center gap-4 animate-slide-up animate-delay-3">
+      <a
+        href="#projects"
+        class="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium text-sm hover:opacity-90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] hover:scale-[1.04] active:scale-[0.97]"
+      >
+        <span data-i18n="hero.cta.projects">Ver proyectos</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a
+        href="#experience"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-background/50 font-medium text-sm hover:bg-accent hover:border-primary/30 transition-all hover:shadow-[0_0_15px_hsl(var(--primary)/0.15)] hover:scale-[1.04] active:scale-[0.97]"
+      >
+        <span data-i18n="hero.cta.experience">Experiencia</span>
+      </a>
+      <a
+        href={`${personalInfo.resumeUrl}`}
+        target="_blank"
+        class="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-background/50 font-medium text-sm hover:bg-accent hover:border-primary/30 transition-all hover:shadow-[0_0_15px_hsl(var(--primary)/0.15)] hover:scale-[1.04] active:scale-[0.97]"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:-translate-y-0.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-i18n="hero.cv">CV</span>
+      </a>
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-background/50 font-medium text-sm hover:bg-accent hover:border-primary/30 transition-all hover:shadow-[0_0_15px_hsl(var(--primary)/0.15)] hover:scale-[1.04] active:scale-[0.97]"
+      >
+        <span data-i18n="hero.cta.contact">Contacto</span>
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="mt-16 md:mt-20 grid grid-cols-3 gap-6 max-w-md mx-auto stagger-children">
+      <div class="text-center p-4 rounded-2xl bg-background/40 border border-border/30 hover:border-primary/20 transition-all hover:shadow-sm">
+        <div class="text-2xl md:text-3xl font-bold text-foreground bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">8+</div>
+        <div class="flex items-center justify-center gap-1.5 text-xs text-muted-foreground mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span data-i18n="hero.stats.years">Años exp.</span>
+        </div>
+      </div>
+      <div class="text-center p-4 rounded-2xl bg-background/40 border border-border/30 hover:border-primary/20 transition-all hover:shadow-sm">
+        <div class="text-2xl md:text-3xl font-bold text-foreground bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">3</div>
+        <div class="flex items-center justify-center gap-1.5 text-xs text-muted-foreground mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="16" height="10" x="4" y="2" rx="2"/><path d="M9 22h6"/><path d="M12 12v10"/></svg>
+          <span data-i18n="hero.stats.companies">Empresas</span>
+        </div>
+      </div>
+      <div class="text-center p-4 rounded-2xl bg-background/40 border border-border/30 hover:border-primary/20 transition-all hover:shadow-sm">
+        <div class="text-2xl md:text-3xl font-bold text-foreground bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">15+</div>
+        <div class="flex items-center justify-center gap-1.5 text-xs text-muted-foreground mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span data-i18n="hero.stats.techs">Tech stacks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

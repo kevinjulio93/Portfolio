@@ -1,0 +1,182 @@
+---
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-background/80 border-b border-border/40">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-shift">
+      KJ
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#about" class="nav-link text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-violet-500 after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.about">Sobre mí</a>
+      <a href="#skills" class="nav-link text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-violet-500 after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.skills">Skills</a>
+      <a href="#experience" class="nav-link text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-violet-500 after:to-emerald-500 after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.experience">Experiencia</a>
+      <a href="#projects" class="nav-link text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-emerald-500 after:to-blue-500 after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.projects">Trabajos</a>
+      <a href="#references" class="nav-link text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-emerald-500 after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.references">Referencias</a>
+      <a href="#contact" class="nav-link text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-emerald-500 after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <!-- Theme Toggle -->
+      <div class="relative">
+        <button id="theme-btn" class="theme-btn" aria-label="Toggle theme">
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg id="icon-system" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+        </button>
+        <div id="theme-dropdown" class="theme-dropdown">
+          <button class="theme-option" data-theme="light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <span data-i18n="theme:light">Light</span>
+          </button>
+          <button class="theme-option" data-theme="dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <span data-i18n="theme:dark">Dark</span>
+          </button>
+          <button class="theme-option" data-theme="system">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            <span data-i18n="theme:system">System</span>
+          </button>
+        </div>
+      </div>
+      <!-- Language Toggle -->
+      <button id="lang-btn" class="lang-btn text-xs font-semibold tracking-wider w-8 h-8 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all" aria-label="Toggle language">
+        ES
+      </button>
+      <!-- Mobile menu -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label="Menú">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-border/40 bg-background/95 nav-blur">
+    <div class="px-6 py-4 flex flex-col gap-3 text-sm font-medium text-muted-foreground">
+      <a href="#about" class="hover:text-foreground transition-colors py-1" data-i18n="nav.about">Sobre mí</a>
+      <a href="#skills" class="hover:text-foreground transition-colors py-1" data-i18n="nav.skills">Skills</a>
+      <a href="#experience" class="hover:text-foreground transition-colors py-1" data-i18n="nav.experience">Experiencia</a>
+      <a href="#projects" class="hover:text-foreground transition-colors py-1" data-i18n="nav.projects">Trabajos</a>
+      <a href="#references" class="hover:text-foreground transition-colors py-1" data-i18n="nav.references">Referencias</a>
+      <a href="#contact" class="hover:text-foreground transition-colors py-1" data-i18n="nav.contact">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { getStoredTheme, setTheme, applyTheme } from '../scripts/theme';
+  import { getLang, setLang } from '../scripts/i18n';
+
+  // ---- Theme Dropdown ----
+  const themeBtn = document.getElementById('theme-btn');
+  const themeDropdown = document.getElementById('theme-dropdown');
+  const iconSun = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+  const iconSystem = document.getElementById('icon-system');
+
+  function updateThemeIcon(stored) {
+    [iconSun, iconMoon, iconSystem].forEach((el) => el?.classList.add('hidden'));
+    if (stored === 'light') iconSun?.classList.remove('hidden');
+    else if (stored === 'dark') iconMoon?.classList.remove('hidden');
+    else iconSystem?.classList.remove('hidden');
+  }
+
+  function updateThemeDropdown(stored) {
+    document.querySelectorAll('.theme-option').forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.theme === stored);
+    });
+  }
+
+  // Init
+  const stored = getStoredTheme();
+  updateThemeIcon(stored);
+  updateThemeDropdown(stored);
+
+  themeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themeDropdown?.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.theme-option').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const theme = btn.dataset.theme;
+      setTheme(theme);
+      updateThemeIcon(theme);
+      updateThemeDropdown(theme);
+      themeDropdown?.classList.remove('open');
+    });
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#theme-btn') && !e.target.closest('#theme-dropdown')) {
+      themeDropdown?.classList.remove('open');
+    }
+  });
+
+  // Listen for system changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (getStoredTheme() === 'system') {
+      updateThemeIcon('system');
+      applyTheme();
+    }
+  });
+
+  // ---- Language Toggle ----
+  const langBtn = document.getElementById('lang-btn');
+
+  function updateLangBtn(lang) {
+    if (langBtn) langBtn.textContent = lang === 'es' ? 'ES' : 'EN';
+  }
+
+  updateLangBtn(getLang());
+
+  langBtn?.addEventListener('click', () => {
+    const current = getLang();
+    const next = current === 'es' ? 'en' : 'es';
+    setLang(next);
+    updateLangBtn(next);
+  });
+
+  // ---- Mobile Menu ----
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  // ---- Active Nav Link on Scroll ----
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = ['about', 'skills', 'experience', 'projects', 'references', 'contact'];
+
+  function updateActiveLink() {
+    const scrollY = window.scrollY + 120;
+    let current = '';
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) {
+        current = id;
+      }
+    });
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute('href')?.slice(1);
+      if (href === current) {
+        link.classList.add('text-foreground');
+        link.classList.remove('text-muted-foreground');
+        link.style.after = 'width: 100%';
+      } else {
+        link.classList.remove('text-foreground');
+        link.classList.add('text-muted-foreground');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
+</script>
