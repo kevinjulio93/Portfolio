@@ -5,9 +5,9 @@ import { personalInfo } from "../data/portfolio";
 <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
   <!-- Animated gradient orbs background -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="gradient-orb w-[500px] h-[500px] -top-40 -left-20 bg-gradient-to-br from-blue-500/30 via-cyan-400/20 to-transparent animate-float-slow" />
-    <div class="gradient-orb w-[400px] h-[400px] -bottom-32 -right-20 bg-gradient-to-tl from-violet-500/25 via-purple-400/15 to-transparent animate-float-delayed" />
-    <div class="gradient-orb w-[350px] h-[350px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-tr from-emerald-500/15 via-teal-400/10 to-transparent animate-float-slower" />
+    <div class="gradient-orb w-[500px] h-[500px] -top-40 -left-20 bg-gradient-to-br from-blue-500/30 via-cyan-400/20 to-transparent" />
+    <div class="gradient-orb w-[400px] h-[400px] -bottom-32 -right-20 bg-gradient-to-tl from-violet-500/25 via-purple-400/15 to-transparent" />
+    <div class="gradient-orb w-[350px] h-[350px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-tr from-emerald-500/15 via-teal-400/10 to-transparent" />
   </div>
 
   <!-- Static gradient overlay -->
@@ -15,57 +15,57 @@ import { personalInfo } from "../data/portfolio";
 
   <!-- Floating code lines -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none hidden md:block" aria-hidden="true">
-    <pre class="code-line absolute top-[15%] left-[5%] text-[11px] leading-tight opacity-40 animate-float font-mono text-blue-400 dark:text-blue-300 select-none" data-speed="0.08">
+    <pre class="code-line absolute top-[15%] left-[5%] text-[11px] leading-tight opacity-40 font-mono text-blue-400 dark:text-blue-300 select-none" data-speed="0.08">
       <code>{`const portfolio = new Portfolio()`}</code>
     </pre>
-    <pre class="code-line absolute top-[25%] right-[8%] text-[11px] leading-tight opacity-40 animate-float-delayed font-mono text-emerald-400 dark:text-emerald-300 select-none" data-speed="0.12">
+    <pre class="code-line absolute top-[25%] right-[8%] text-[11px] leading-tight opacity-40 font-mono text-emerald-400 dark:text-emerald-300 select-none" data-speed="0.12">
       <code>{`npm run deploy -- --prod`}</code>
     </pre>
-    <pre class="code-line absolute top-[55%] left-[3%] text-[11px] leading-tight opacity-30 animate-float-slower font-mono text-violet-400 dark:text-violet-300 select-none" data-speed="0.06">
+    <pre class="code-line absolute top-[55%] left-[3%] text-[11px] leading-tight opacity-30 font-mono text-violet-400 dark:text-violet-300 select-none" data-speed="0.06">
       <code>{`<TechStack skills={skills} />`}</code>
     </pre>
-    <pre class="code-line absolute top-[12%] right-[20%] text-[11px] leading-tight opacity-30 animate-float font-mono text-amber-400 dark:text-amber-300 select-none" data-speed="0.1">
+    <pre class="code-line absolute top-[12%] right-[20%] text-[11px] leading-tight opacity-30 font-mono text-amber-400 dark:text-amber-300 select-none" data-speed="0.1">
       <code>{`docker compose up -d`}</code>
     </pre>
-    <pre class="code-line absolute top-[70%] right-[5%] text-[11px] leading-tight opacity-40 animate-float-delayed font-mono text-sky-400 dark:text-sky-300 select-none" data-speed="0.15">
+    <pre class="code-line absolute top-[70%] right-[5%] text-[11px] leading-tight opacity-40 font-mono text-sky-400 dark:text-sky-300 select-none" data-speed="0.15">
       <code>{`kubectl apply -f deploy.yaml`}</code>
     </pre>
-    <pre class="code-line absolute bottom-[15%] left-[12%] text-[11px] leading-tight opacity-30 animate-float-slow font-mono text-rose-400 dark:text-rose-300 select-none" data-speed="0.09">
+    <pre class="code-line absolute bottom-[15%] left-[12%] text-[11px] leading-tight opacity-30 font-mono text-rose-400 dark:text-rose-300 select-none" data-speed="0.09">
       <code>{`git push origin main`}</code>
     </pre>
-    <pre class="code-line absolute top-[40%] left-[1%] text-[11px] leading-tight opacity-20 animate-float-slower font-mono text-foreground/20 select-none" data-speed="0.05">
+    <pre class="code-line absolute top-[40%] left-[1%] text-[11px] leading-tight opacity-20 font-mono text-foreground/20 select-none" data-speed="0.05">
       <code>{`// TODO: add more features`}</code>
     </pre>
-    <pre class="code-line absolute bottom-[30%] right-[2%] text-[11px] leading-tight opacity-30 animate-float font-mono text-indigo-400 dark:text-indigo-300 select-none" data-speed="0.11">
+    <pre class="code-line absolute bottom-[30%] right-[2%] text-[11px] leading-tight opacity-30 font-mono text-indigo-400 dark:text-indigo-300 select-none" data-speed="0.11">
       <code>{`import { React } from 'react'`}</code>
     </pre>
   </div>
 
   <div class="max-w-5xl mx-auto px-6 py-24 md:py-28 text-center relative">
     <!-- Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-medium mb-6 border animate-border-glow">
-      <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-medium mb-6 border">
+      <span class="w-1.5 h-1.5 rounded-full bg-primary" />
       <span data-i18n="hero.available">Disponible para proyectos</span>
     </div>
 
     <!-- Name & Role - Now inline without forced break -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-5 animate-slide-up">
-      <span class="bg-gradient-to-r from-foreground via-primary to-foreground/70 bg-clip-text text-transparent animate-shimmer block sm:inline">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-5">
+      <span class="bg-gradient-to-r from-foreground via-primary to-foreground/70 bg-clip-text text-transparent block sm:inline">
         {personalInfo.name}
       </span>
       <span class="hidden sm:inline mx-2 text-muted-foreground/30">·</span>
-      <span class="bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-shift block sm:inline text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
+      <span class="bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent block sm:inline text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
         {personalInfo.role}
       </span>
     </h1>
 
     <!-- Bio -->
-    <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up animate-delay-2" data-i18n="about.shortBio">
+    <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="about.shortBio">
       {personalInfo.shortBio}
     </p>
 
     <!-- CTAs -->
-    <div class="flex flex-wrap items-center justify-center gap-4 animate-slide-up animate-delay-3">
+    <div class="flex flex-wrap items-center justify-center gap-4">
       <a
         href="#projects"
         class="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium text-sm hover:opacity-90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] hover:scale-[1.04] active:scale-[0.97]"

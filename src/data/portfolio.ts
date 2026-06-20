@@ -45,12 +45,12 @@ export interface Certification {
 
 export const personalInfo = {
   name: "Kevin Andres Julio Marquez",
-  role: "IT Engineer - Developer",
+  role: "Software Developer",
   email: "kevinjulio93@gmail.com",
   phone: "3185312757",
   location: "Cartagena, Colombia",
-  bio: "IT Engineer con más de 8 años de experiencia en desarrollo de software, abarcando el ciclo de vida completo de aplicaciones: desde el diseño y desarrollo hasta el soporte técnico. Especializado en construir soluciones web escalables y eficientes usando tecnologías modernas, con fuerte capacidad de resolución de problemas y manejo de incidentes críticos en entornos productivos exigentes. En los últimos años, he trabajado en administración de aplicaciones con Docker, Kubernetes y Linux para despliegue y gestión en la nube.",
-  shortBio: "IT Engineer con 8+ años construyendo soluciones web escalables. Especialista en React, TypeScript, Docker, Kubernetes y Cloud.",
+  bio: "Software Developer con más de 8 años de experiencia en desarrollo de software, abarcando el ciclo de vida completo de aplicaciones: desde el diseño y desarrollo hasta el soporte técnico. Especializado en construir soluciones web escalables y eficientes usando tecnologías modernas, con fuerte capacidad de resolución de problemas y manejo de incidentes críticos en entornos productivos exigentes. En los últimos años, he trabajado en administración de aplicaciones con Docker, Kubernetes y Linux para despliegue y gestión en la nube.",
+  shortBio: "Software Developer con 8+ años construyendo soluciones web escalables. Especialista en React, TypeScript, Docker, Kubernetes y Cloud.",
   education: {
     degree: "Bachelor's Degree in Systems Engineering",
     university: "Universidad Tecnológica de Bolívar",

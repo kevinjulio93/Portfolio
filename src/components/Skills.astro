@@ -5,7 +5,7 @@ import { skillIcons } from "../data/skillIcons";
 
 <section id="skills" class="py-32 relative bg-gradient-to-b from-muted/30 to-muted/10">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16 animate-slide-up">
+    <div class="text-center mb-16">
       <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="skills.section">Habilidades</span>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4">
         <span data-i18n="skills.title">Tech Stack</span>
@@ -18,7 +18,7 @@ import { skillIcons } from "../data/skillIcons";
         {["Frontend", "Backend", "DevOps", "Lenguaje"].map((cat) => {
           const catKey = cat === "Lenguaje" ? "skills.cat.language" : `skills.cat.${cat.toLowerCase()}`;
           return (
-          <div class="mb-10 stagger-children">
+          <div class="mb-10">
             <h3 class="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider" data-i18n={catKey}>{cat}</h3>
             <div class="flex flex-wrap gap-3">
               {skills.filter((s) => s.category === cat).map((skill) => (

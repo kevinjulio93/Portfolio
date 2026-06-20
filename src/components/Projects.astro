@@ -4,7 +4,7 @@ import { projects } from "../data/portfolio";
 
 <section id="projects" class="py-32 relative">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16 animate-slide-up">
+    <div class="text-center mb-16">
       <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="projects.section">Trabajos</span>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4">
         <span data-i18n="projects.title">Proyectos Destacados</span>
@@ -51,9 +51,9 @@ import { projects } from "../data/portfolio";
 
     <!-- More projects grid -->
     {projects.filter(p => !p.featured).length > 0 && (
-      <div class="mt-16 animate-slide-up">
+      <div class="mt-16">
         <h3 class="text-xl font-semibold tracking-tight text-center mb-8" data-i18n="projects.more">Más proyectos</h3>
-        <div class="grid md:grid-cols-2 gap-6 stagger-children">
+        <div class="grid md:grid-cols-2 gap-6">
           {projects.filter(p => !p.featured).map((project, pIdx) => {
           const idx = projects.filter(p => p.featured).length + pIdx;
           return (

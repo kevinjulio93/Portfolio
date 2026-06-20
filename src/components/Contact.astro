@@ -18,7 +18,7 @@ import { personalInfo } from "../data/portfolio";
       </p>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-4 mb-16 stagger-children">
+    <div class="flex flex-wrap justify-center gap-4 mb-16">
       <a
         href={`tel:${personalInfo.phone}`}
         class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-background/50 font-medium text-sm hover:bg-accent hover:border-primary/30 transition-all hover:shadow-[0_0_15px_hsl(var(--primary)/0.15)] hover:scale-[1.04] active:scale-[0.97]"
@@ -28,7 +28,7 @@ import { personalInfo } from "../data/portfolio";
       </a>
       <a
         href={`mailto:${personalInfo.email}`}
-        class="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 text-white font-medium text-sm transition-all hover:shadow-[0_0_25px_hsl(var(--primary)/0.3)] hover:scale-[1.04] active:scale-[0.97] animate-gradient-shift"
+        class="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 text-white font-medium text-sm transition-all hover:shadow-[0_0_25px_hsl(var(--primary)/0.3)] hover:scale-[1.04] active:scale-[0.97]"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         {personalInfo.email}
@@ -51,7 +51,7 @@ import { personalInfo } from "../data/portfolio";
       </a>
     </div>
     <!-- Download CV -->
-    <div class="animate-slide-up">
+    <div>
       <a
         href={personalInfo.resumeUrl}
         target="_blank"

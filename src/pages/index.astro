@@ -27,6 +27,12 @@ import Footer from '../components/Footer.astro';
 	<!-- GSAP Animations -->
 	<script>
 		import { initAnimations } from '../scripts/animations';
-		document.addEventListener('astro:page-load', initAnimations);
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initAnimations);
+		} else {
+			initAnimations();
+		}
+	</script>
 	</script>
 </Layout>
