@@ -18,11 +18,11 @@ export const translations = {
   "hero.stats.techs": { es: "Tech stacks", en: "Tech stacks" },
 
   "about.section": { es: "Sobre mí", en: "About" },
-  "about.title": { es: "IT Engineer con 8+ años de experiencia", en: "IT Engineer with 8+ years of experience" },
+  "about.title": { es: "IT Engineer con 10+ años de experiencia", en: "IT Engineer with 10+ years of experience" },
 
-  "about.bio": { es: "IT Engineer con más de 8 años de experiencia en desarrollo de software, abarcando el ciclo de vida completo de aplicaciones: desde el diseño y desarrollo hasta el soporte técnico. Especializado en construir soluciones web escalables y eficientes usando tecnologías modernas, con fuerte capacidad de resolución de problemas y manejo de incidentes críticos en entornos productivos exigentes. En los últimos años, he trabajado en administración de aplicaciones con Docker, Kubernetes y Linux para despliegue y gestión en la nube.", en: "IT Engineer with over 8 years of experience in software development, covering the full application lifecycle: from design and development to technical support. Specialized in building scalable and efficient web solutions using modern technology stacks, with strong problem-solving skills and critical incident management in demanding production environments. In recent years, I have worked on application administration with Docker, Kubernetes, and Linux for cloud-based deployment and management." },
+  "about.bio": { es: "IT Engineer con más de 10 años de experiencia en desarrollo de software, abarcando el ciclo de vida completo de aplicaciones: desde el diseño y desarrollo hasta el soporte técnico. Especializado en construir soluciones web escalables y eficientes usando tecnologías modernas, con fuerte capacidad de resolución de problemas y manejo de incidentes críticos en entornos productivos exigentes. En los últimos años, he trabajado en administración de aplicaciones con Docker, Kubernetes y Linux para despliegue y gestión en la nube.", en: "IT Engineer with over 10 years of experience in software development, covering the full application lifecycle: from design and development to technical support. Specialized in building scalable and efficient web solutions using modern technology stacks, with strong problem-solving skills and critical incident management in demanding production environments. In recent years, I have worked on application administration with Docker, Kubernetes, and Linux for cloud-based deployment and management." },
 
-  "about.shortBio": { es: "IT Engineer con 8+ años construyendo soluciones web escalables. Especialista en React, TypeScript, Docker, Kubernetes y Cloud.", en: "IT Engineer with 8+ years building scalable web solutions. Specialist in React, TypeScript, Docker, Kubernetes and Cloud." },
+  "about.shortBio": { es: "IT Engineer con 10+ años construyendo soluciones web escalables. Especialista en React, TypeScript, Docker, Kubernetes y Cloud.", en: "IT Engineer with 10+ years building scalable web solutions. Specialist in React, TypeScript, Docker, Kubernetes and Cloud." },
 
   "about.soft_skills": { es: "Soft Skills", en: "Soft Skills" },
 
@@ -37,9 +37,16 @@ export const translations = {
   "experience.title": { es: "Experiencia Laboral", en: "Work Experience" },
   "experience.awards": { es: "Reconocimientos", en: "Awards" },
 
+  "exp.cigo-tracker.role": { es: "Full Stack Developer", en: "Full Stack Developer" },
+  "exp.cigo-tracker.company": { es: "Cigo Tracker", en: "Cigo Tracker" },
+  "exp.cigo-tracker.period": { es: "Feb 2026 – Actualidad", en: "Feb 2026 – Present" },
+  "exp.cigo-tracker.desc.0": { es: "Diseño e implementación de funcionalidades para la próxima versión del producto como Full Stack Developer.", en: "Designed and implemented features for the next version of the product as a Full Stack Developer." },
+  "exp.cigo-tracker.desc.1": { es: "Desarrollo de servicios backend escalables y mantenibles con C#, .NET y Entity Framework.", en: "Built scalable, maintainable backend services with C#, .NET, and Entity Framework." },
+  "exp.cigo-tracker.desc.2": { es: "Construcción de una arquitectura frontend responsive y basada en componentes con Blazor.", en: "Delivered a responsive, component-based frontend architecture with Blazor." },
+
   "exp.qrvey.role": { es: "Frontend Developer → Software Architect", en: "Frontend Developer → Software Architect" },
   "exp.qrvey.company": { es: "Qrvey Inc", en: "Qrvey Inc" },
-  "exp.qrvey.period": { es: "Ago 2018 – Actualidad", en: "Aug 2018 – Present" },
+  "exp.qrvey.period": { es: "Ene 2018 – Ene 2026", en: "Jan 2018 – Jan 2026" },
   "exp.qrvey.desc.0": { es: "Crecimiento progresivo desde Junior Frontend Developer hasta Software Architect.", en: "Progressive growth from Junior Frontend Developer to Software Architect." },
   "exp.qrvey.desc.1": { es: "Diseño y desarrollo de aplicaciones web escalables usando React, TypeScript y StencilJS.", en: "Designed and developed scalable web applications using React, TypeScript, and StencilJS." },
   "exp.qrvey.desc.2": { es: "Desarrollo de componentes reutilizables y optimización de interfaces para rendimiento y mantenibilidad.", en: "Built reusable components and optimized interfaces for performance and maintainability." },
@@ -67,14 +74,12 @@ export const translations = {
   "cert.0.title": { es: "Kubernetes para administradores IT esencial", en: "Essential Kubernetes for IT Administrators" },
   "cert.0.platform": { es: "LinkedIn Learning", en: "LinkedIn Learning" },
 
-  "proj.0.title": { es: "Plataforma SaaS - Qrvey", en: "SaaS Platform - Qrvey" },
-  "proj.0.desc": { es: "Arquitectura y desarrollo de aplicación web escalable con React, TypeScript y StencilJS para análisis de datos.", en: "Architecture and development of a scalable web application with React, TypeScript and StencilJS for data analytics." },
-  "proj.1.title": { es: "Plataforma de Impacto Social - Qualty SAS", en: "Social Impact Platform - Qualty SAS" },
-  "proj.1.desc": { es: "Plataforma para gestión y seguimiento de ayudas a personas mayores y con discapacidad.", en: "Platform for managing and tracking aid for elderly people and individuals with disabilities." },
-  "proj.2.title": { es: "Sistema de Componentes - StencilJS", en: "Component System - StencilJS" },
-  "proj.2.desc": { es: "Biblioteca de componentes reutilizables para aplicaciones web empresariales.", en: "Reusable component library for enterprise web applications." },
-  "proj.3.title": { es: "Administración de Clúster Kubernetes", en: "Kubernetes Cluster Administration" },
-  "proj.3.desc": { es: "Gestión y despliegue de aplicaciones en clústeres Kubernetes con Linux y Nginx.", en: "Management and deployment of applications on Kubernetes clusters with Linux and Nginx." },
+  "proj.0.title": { es: "FinanzApp", en: "FinanzApp" },
+  "proj.0.desc": { es: "Aplicación financiera full stack con un agente de IA para ayudar a gestionar las finanzas personales.", en: "Full-stack financial application with an AI agent that helps manage personal finances." },
+  "proj.1.title": { es: "Qrvey", en: "Qrvey" },
+  "proj.1.desc": { es: "Plataforma de analítica embebida con IA para productos SaaS multi-tenant.", en: "AI-native embedded analytics platform for multi-tenant SaaS products." },
+  "proj.2.title": { es: "Cigo Tracker", en: "Cigo Tracker" },
+  "proj.2.desc": { es: "Plataforma de planificación de rutas y seguimiento de entregas de última milla en tiempo real.", en: "Real-time last-mile route planning and delivery tracking platform." },
 
   "experience.certifications": { es: "Certificaciones", en: "Certifications" },
 

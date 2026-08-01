@@ -49,8 +49,8 @@ export const personalInfo = {
   email: "kevinjulio93@gmail.com",
   phone: "3185312757",
   location: "Cartagena, Colombia",
-  bio: "Software Developer con más de 8 años de experiencia en desarrollo de software, abarcando el ciclo de vida completo de aplicaciones: desde el diseño y desarrollo hasta el soporte técnico. Especializado en construir soluciones web escalables y eficientes usando tecnologías modernas, con fuerte capacidad de resolución de problemas y manejo de incidentes críticos en entornos productivos exigentes. En los últimos años, he trabajado en administración de aplicaciones con Docker, Kubernetes y Linux para despliegue y gestión en la nube.",
-  shortBio: "Software Developer con 8+ años construyendo soluciones web escalables. Especialista en React, TypeScript, Docker, Kubernetes y Cloud.",
+  bio: "Software Developer con más de 10 años de experiencia en desarrollo de software, abarcando el ciclo de vida completo de aplicaciones: desde el diseño y desarrollo hasta el soporte técnico. Especializado en construir soluciones web escalables y eficientes usando tecnologías modernas, con fuerte capacidad de resolución de problemas y manejo de incidentes críticos en entornos productivos exigentes. En los últimos años, he trabajado en administración de aplicaciones con Docker, Kubernetes y Linux para despliegue y gestión en la nube.",
+  shortBio: "Software Developer con 10+ años construyendo soluciones web escalables. Especialista en React, TypeScript, Docker, Kubernetes y Cloud.",
   education: {
     degree: "Bachelor's Degree in Systems Engineering",
     university: "Universidad Tecnológica de Bolívar",
@@ -79,6 +79,10 @@ export const skills: Skill[] = [
   { name: "Nginx", category: "DevOps" },
   { name: "CI/CD", category: "DevOps" },
   { name: "StencilJS", category: "Frontend" },
+  { name: "C#", category: "Lenguaje" },
+  { name: ".NET", category: "Backend" },
+  { name: "Blazor", category: "Frontend" },
+  { name: "Entity Framework", category: "Backend" },
 ];
 
 export const softSkills: string[] = [
@@ -94,10 +98,22 @@ export const softSkills: string[] = [
 
 export const workExperience: WorkExperience[] = [
   {
+    id: "cigo-tracker",
+    company: "Cigo Tracker",
+    role: "Full Stack Developer",
+    period: "Feb 2026 – Actualidad",
+    description: [
+      "Diseño e implementación de funcionalidades para la próxima versión del producto como Full Stack Developer.",
+      "Desarrollo de servicios backend escalables y mantenibles con C#, .NET y Entity Framework.",
+      "Construcción de una arquitectura frontend responsive y basada en componentes con Blazor.",
+    ],
+    tags: ["C#", ".NET", "Entity Framework", "Blazor"],
+  },
+  {
     id: "qrvey",
     company: "Qrvey Inc",
     role: "Frontend Developer → Software Architect",
-    period: "Ago 2018 – Actualidad",
+    period: "Ene 2018 – Ene 2026",
     description: [
       "Crecimiento progresivo desde Junior Frontend Developer hasta Software Architect.",
       "Diseño y desarrollo de aplicaciones web escalables usando React, TypeScript y StencilJS.",
@@ -167,44 +183,36 @@ export const references: Reference[] = [
 
 export const projects: Project[] = [
   {
-    id: "proyecto-qrvey",
-    title: "Plataforma SaaS - Qrvey",
-    description: "Arquitectura y desarrollo de aplicación web escalable con React, TypeScript y StencilJS para análisis de datos.",
+    id: "proyecto-finanzapp",
+    title: "FinanzApp",
+    description: "Aplicación financiera full stack con un agente de IA para ayudar a gestionar las finanzas personales.",
     longDescription:
-      "Diseño y desarrollo de componentes reutilizables, optimización de rendimiento, y liderazgo arquitectónico. Implementación de Docker, Kubernetes y CI/CD para despliegue en la nube. Atención directa a clientes y resolución de incidentes críticos.",
+      "Desarrollo de una aplicación financiera moderna con frontend en Next.js 16 y React 19, junto a una API backend en Node.js y Express. Incluye un agente de IA que ayuda a gestionar las finanzas personales. Persistencia de datos con MongoDB y una arquitectura preparada para escalar.",
+    image: "/projects/finanzapp.jpg",
+    tags: ["Next.js 16", "React 19", "Node.js", "Express", "MongoDB"],
+    demoUrl: "https://finanzapp.juliomarquez.dev/",
+    featured: true,
+  },
+  {
+    id: "proyecto-qrvey",
+    title: "Qrvey",
+    description: "Plataforma de analítica embebida con IA para productos SaaS multi-tenant.",
+    longDescription:
+      "Contribuí al desarrollo de una plataforma de analítica embebida para SaaS, con dashboards personalizables, capacidades de autoservicio y flujos de trabajo impulsados por IA.",
     image: "/projects/qrvey.jpg",
     tags: ["React", "TypeScript", "StencilJS", "Docker", "Kubernetes", "CI/CD"],
-    demoUrl: "https://qrvey.com",
+    demoUrl: "https://qrvey.com/",
     featured: true,
   },
   {
-    id: "proyecto-qualty",
-    title: "Plataforma de Impacto Social - Qualty SAS",
-    description: "Plataforma para gestión y seguimiento de ayudas a personas mayores y con discapacidad.",
+    id: "proyecto-cigo-tracker",
+    title: "Cigo Tracker",
+    description: "Plataforma de planificación de rutas y seguimiento de entregas de última milla en tiempo real.",
     longDescription:
-      "Co-fundé la empresa y lideré el desarrollo completo de la plataforma. Gestión de recursos, atención a clientes y despliegue con Docker para entornos escalables y confiables.",
-    image: "/projects/qualty.jpg",
-    tags: ["JavaScript", "Docker", "Linux", "Node.js"],
+      "Desarrollo de funcionalidades para la nueva versión de una plataforma de operaciones logísticas, enfocada en optimización de rutas, monitoreo de flotas y seguimiento de entregas en tiempo real.",
+    image: "/projects/cigo-tracker.jpg",
+    tags: ["C#", ".NET", "Entity Framework", "Blazor"],
+    demoUrl: "https://cigotracker.com/",
     featured: true,
-  },
-  {
-    id: "proyecto-stencil",
-    title: "Sistema de Componentes - StencilJS",
-    description: "Biblioteca de componentes reutilizables para aplicaciones web empresariales.",
-    longDescription:
-      "Construcción de un sistema de componentes web reutilizables con StencilJS, optimizados para rendimiento y mantenibilidad en múltiples aplicaciones del ecosistema Qrvey.",
-    image: "/projects/stencil.jpg",
-    tags: ["StencilJS", "TypeScript", "React", "Web Components"],
-    featured: false,
-  },
-  {
-    id: "proyecto-cluster",
-    title: "Administración de Clúster Kubernetes",
-    description: "Gestión y despliegue de aplicaciones en clústeres Kubernetes con Linux y Nginx.",
-    longDescription:
-      "Administración de aplicaciones en producción usando Kubernetes, Docker, Linux y Nginx. Implementación de pipelines CI/CD para automatización de despliegues y monitoreo de incidentes críticos.",
-    image: "/projects/k8s.jpg",
-    tags: ["Kubernetes", "Docker", "Linux", "Nginx", "CI/CD"],
-    featured: false,
   },
 ];
