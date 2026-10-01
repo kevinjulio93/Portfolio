@@ -15,49 +15,54 @@ import { personalInfo } from "../data/portfolio";
 
   <!-- Floating code lines -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none hidden md:block" aria-hidden="true">
-    <pre class="code-line absolute top-[15%] left-[5%] text-[11px] leading-tight opacity-40 font-mono text-blue-400 dark:text-blue-300 select-none" data-speed="0.08">
-      <code>{`const portfolio = new Portfolio()`}</code>
+    <pre class="code-line absolute top-[14%] left-[4%] text-[11px] leading-tight opacity-40 font-mono text-blue-400 dark:text-blue-300 select-none" data-speed="0.08">
+      <code>{`const agent = new AgenticWorkflow()`}</code>
     </pre>
-    <pre class="code-line absolute top-[25%] right-[8%] text-[11px] leading-tight opacity-40 font-mono text-emerald-400 dark:text-emerald-300 select-none" data-speed="0.12">
-      <code>{`npm run deploy -- --prod`}</code>
+    <pre class="code-line absolute top-[24%] right-[7%] text-[11px] leading-tight opacity-40 font-mono text-emerald-400 dark:text-emerald-300 select-none" data-speed="0.12">
+      <code>{`await expect(page).toHaveURL('/dashboard')`}</code>
     </pre>
-    <pre class="code-line absolute top-[55%] left-[3%] text-[11px] leading-tight opacity-30 font-mono text-violet-400 dark:text-violet-300 select-none" data-speed="0.06">
-      <code>{`<TechStack skills={skills} />`}</code>
+    <pre class="code-line absolute top-[56%] left-[3%] text-[11px] leading-tight opacity-35 font-mono text-violet-400 dark:text-violet-300 select-none" data-speed="0.06">
+      <code>{`<PageBuilder widgets={telemetry} />`}</code>
     </pre>
-    <pre class="code-line absolute top-[12%] right-[20%] text-[11px] leading-tight opacity-30 font-mono text-amber-400 dark:text-amber-300 select-none" data-speed="0.1">
-      <code>{`docker compose up -d`}</code>
+    <pre class="code-line absolute top-[10%] right-[22%] text-[11px] leading-tight opacity-30 font-mono text-amber-400 dark:text-amber-300 select-none" data-speed="0.1">
+      <code>{`useStore.setState({ isConnected: true })`}</code>
     </pre>
-    <pre class="code-line absolute top-[70%] right-[5%] text-[11px] leading-tight opacity-40 font-mono text-sky-400 dark:text-sky-300 select-none" data-speed="0.15">
-      <code>{`kubectl apply -f deploy.yaml`}</code>
+    <pre class="code-line absolute top-[72%] right-[5%] text-[11px] leading-tight opacity-40 font-mono text-sky-400 dark:text-sky-300 select-none" data-speed="0.15">
+      <code>{`kubectl apply -f deployment.yaml`}</code>
     </pre>
-    <pre class="code-line absolute bottom-[15%] left-[12%] text-[11px] leading-tight opacity-30 font-mono text-rose-400 dark:text-rose-300 select-none" data-speed="0.09">
+    <pre class="code-line absolute bottom-[15%] left-[10%] text-[11px] leading-tight opacity-30 font-mono text-rose-400 dark:text-rose-300 select-none" data-speed="0.09">
       <code>{`git push origin main`}</code>
     </pre>
-    <pre class="code-line absolute top-[40%] left-[1%] text-[11px] leading-tight opacity-20 font-mono text-foreground/20 select-none" data-speed="0.05">
-      <code>{`// TODO: add more features`}</code>
+    <pre class="code-line absolute top-[42%] left-[1%] text-[11px] leading-tight opacity-20 font-mono text-foreground/20 select-none" data-speed="0.05">
+      <code>{`// AI-First SDLC: spec -> test -> loop`}</code>
     </pre>
-    <pre class="code-line absolute bottom-[30%] right-[2%] text-[11px] leading-tight opacity-30 font-mono text-indigo-400 dark:text-indigo-300 select-none" data-speed="0.11">
-      <code>{`import { React } from 'react'`}</code>
+    <pre class="code-line absolute bottom-[28%] right-[3%] text-[11px] leading-tight opacity-30 font-mono text-indigo-400 dark:text-indigo-300 select-none" data-speed="0.11">
+      <code>{`docker compose up -d --build`}</code>
     </pre>
   </div>
 
   <div class="max-w-5xl mx-auto px-6 py-24 md:py-28 text-center relative">
     <!-- Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-medium mb-6 border">
-      <span class="w-1.5 h-1.5 rounded-full bg-primary" />
-      <span data-i18n="hero.available">Disponible para proyectos</span>
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-medium mb-6 border border-primary/20 backdrop-blur-sm">
+      <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+      <span data-i18n="hero.available">En búsqueda de trabajo</span>
     </div>
 
-    <!-- Name & Role - Now inline without forced break -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-5">
-      <span class="bg-gradient-to-r from-foreground via-primary to-foreground/70 bg-clip-text text-transparent block sm:inline">
+    <!-- Name & Role -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] mb-4">
+      <span class="bg-gradient-to-r from-foreground via-primary to-foreground/70 bg-clip-text text-transparent block">
         {personalInfo.name}
       </span>
-      <span class="hidden sm:inline mx-2 text-muted-foreground/30">·</span>
-      <span class="bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent block sm:inline text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
+      <span class="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent block">
         {personalInfo.role}
       </span>
     </h1>
+
+    <!-- Tagline badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-muted/60 border border-border/50 text-xs sm:text-sm font-medium text-muted-foreground mb-6">
+      <span class="text-primary font-semibold">✨</span>
+      <span>AI-First SDLC • Agentic Workflows • Frontend Architecture</span>
+    </div>
 
     <!-- Bio -->
     <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="about.shortBio">
@@ -105,14 +110,14 @@ import { personalInfo } from "../data/portfolio";
         </div>
       </div>
       <div class="text-center p-4 rounded-2xl bg-background/40 border border-border/30 hover:border-primary/20 transition-all hover:shadow-sm">
-        <div class="stat-value text-2xl md:text-3xl font-bold text-foreground bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent" data-count="3">3</div>
+        <div class="stat-value text-2xl md:text-3xl font-bold text-foreground bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent" data-count="4">4</div>
         <div class="flex items-center justify-center gap-1.5 text-xs text-muted-foreground mt-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="16" height="10" x="4" y="2" rx="2"/><path d="M9 22h6"/><path d="M12 12v10"/></svg>
           <span data-i18n="hero.stats.companies">Empresas</span>
         </div>
       </div>
       <div class="text-center p-4 rounded-2xl bg-background/40 border border-border/30 hover:border-primary/20 transition-all hover:shadow-sm">
-        <div class="stat-value text-2xl md:text-3xl font-bold text-foreground bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent" data-count="15+">15+</div>
+        <div class="stat-value text-2xl md:text-3xl font-bold text-foreground bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent" data-count="25+">25+</div>
         <div class="flex items-center justify-center gap-1.5 text-xs text-muted-foreground mt-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           <span data-i18n="hero.stats.techs">Tech stacks</span>

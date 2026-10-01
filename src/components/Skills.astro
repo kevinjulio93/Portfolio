@@ -1,6 +1,14 @@
 ---
 import { skills } from "../data/portfolio";
 import { skillIcons } from "../data/skillIcons";
+
+const categories = [
+  { id: "Frontend", key: "skills.cat.frontend", label: "Frontend Engineering & Core" },
+  { id: "AI-First SDLC", key: "skills.cat.aifirst", label: "AI-First SDLC & Agentic Engineering" },
+  { id: "Testing", key: "skills.cat.testing", label: "Testing & Quality Assurance" },
+  { id: "Backend", key: "skills.cat.backend", label: "Backend & APIs" },
+  { id: "DevOps", key: "skills.cat.devops", label: "DevOps, Cloud & Tooling" },
+];
 ---
 
 <section id="skills" class="py-32 relative bg-gradient-to-b from-muted/30 to-muted/10">
@@ -8,43 +16,54 @@ import { skillIcons } from "../data/skillIcons";
     <div class="text-center mb-16">
       <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="skills.section">Habilidades</span>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4">
-        <span data-i18n="skills.title">Tech Stack</span>
+        <span data-i18n="skills.title">Tech Stack & Especialidades</span>
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-5 gap-8 items-start">
+    <div class="grid lg:grid-cols-5 gap-10 items-start">
       <!-- Skills content - left side (3/5) -->
-      <div class="md:col-span-3">
-        {["Frontend", "Backend", "DevOps", "Lenguaje"].map((cat) => {
-          const catKey = cat === "Lenguaje" ? "skills.cat.language" : `skills.cat.${cat.toLowerCase()}`;
+      <div class="lg:col-span-3 space-y-10">
+        {categories.map((cat) => {
+          const categorySkills = skills.filter((s) => s.category === cat.id);
+          if (categorySkills.length === 0) return null;
+
           return (
-          <div class="mb-10">
-            <h3 class="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider" data-i18n={catKey}>{cat}</h3>
-            <div class="flex flex-wrap gap-3">
-              {skills.filter((s) => s.category === cat).map((skill) => (
-                <div class="skill-tag group px-5 py-3 rounded-2xl border border-border/50 bg-background/50 hover:bg-background hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_20px_hsl(var(--primary)/0.12)]">
-                  <span class="inline-flex items-center gap-2 text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
-                    <span set:html={skillIcons[skill.name] || ''} />
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
+            <div class="skill-category">
+              <h3 class="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-violet-500" />
+                <span data-i18n={cat.key}>{cat.label}</span>
+              </h3>
+              <div class="flex flex-wrap gap-2.5">
+                {categorySkills.map((skill) => (
+                  <div class="skill-tag group px-4 py-2.5 rounded-xl border border-border/50 bg-background/60 hover:bg-background hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_20px_hsl(var(--primary)/0.12)] cursor-default">
+                    <span class="inline-flex items-center gap-2.5 text-xs sm:text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
+                      <span class="shrink-0 flex items-center justify-center transition-transform group-hover:scale-110" set:html={skillIcons[skill.name] || ''} />
+                      <span>{skill.name}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
           );
         })}
       </div>
 
-      <!-- Photo - right side (2/5) -->
-      <div class="md:col-span-2 flex justify-center md:justify-end">
-        <div class="skill-photo relative w-full">
-          <div class="absolute" />
-          <img
-            src="/kevin.png"
-            alt="Kevin Julio"
-            class="relative w-full h-auto rounded-2xl"
-            loading="lazy"
-          />
+      <!-- Photo & Highlights - right side (2/5) -->
+      <div class="lg:col-span-2 flex flex-col items-center lg:items-end sticky top-24">
+        <div class="skill-photo relative w-full max-w-sm rounded-3xl overflow-hidden border border-border/60 bg-gradient-to-br from-background/80 to-muted/40 p-2 shadow-2xl">
+          <div class="relative overflow-hidden rounded-2xl">
+            <img
+              src="/kevin.png"
+              alt="Kevin Julio"
+              class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80" />
+            <div class="absolute bottom-4 left-4 right-4 text-center">
+              <p class="text-sm font-bold text-foreground">Kevin Andres Julio Marquez</p>
+              <p class="text-xs text-primary font-medium mt-0.5">Senior Frontend & Full Stack Engineer</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
