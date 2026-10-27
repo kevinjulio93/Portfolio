@@ -2,29 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
 import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
 import References from '../components/References.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-	<Navbar />
-	<main>
-		<Hero />
-		<About />
-		<Skills />
-		<Experience />
-		<Projects />
-		<References />
-		<Contact />
-	</main>
-	<Footer />
+	<div class="w-full min-h-screen bg-[#fdfdfd] dark:bg-[#0e0e10] relative">
+		<Navbar />
+		<main class="w-full">
+			<Hero />
+			<Projects />
+			<Skills />
+			<Experience />
+			<References />
+			<Contact />
+		</main>
+		<Footer />
+	</div>
 
-	<!-- GSAP Animations -->
 	<script>
 		import { initAnimations } from '../scripts/animations';
 

@@ -1,56 +1,119 @@
 export const translations = {
-  "nav.about": { es: "Sobre mí", en: "About" },
-  "nav.skills": { es: "Skills", en: "Skills" },
-  "nav.experience": { es: "Experiencia", en: "Experience" },
-  "nav.projects": { es: "Trabajos", en: "Projects" },
+  "nav.available": { es: "Disponible para nuevo proyecto", en: "Available for New Project" },
+  "nav.work": { es: "Work", en: "Work" },
+  "nav.service": { es: "Service", en: "Service" },
+  "nav.experience": { es: "Experience", en: "Experience" },
+  "nav.references": { es: "References", en: "References" },
   "nav.contact": { es: "Contacto", en: "Contact" },
-  "nav.references": { es: "Referencias", en: "References" },
-  "nav.menu": { es: "Menú", en: "Menu" },
+  "nav.letsTalk": { es: "Hablemos", en: "Let's Talk" },
 
-  "hero.available": { es: "En búsqueda de trabajo", en: "Open to Work" },
+  "hero.available": { es: "Disponible para nuevo proyecto", en: "Available for New Project" },
   "hero.role": {
-    es: "Senior Frontend & Full Stack Engineer | AI-First SDLC • Agentic Workflows",
-    en: "Senior Frontend & Full Stack Engineer | AI-First SDLC • Agentic Workflows",
+    es: "Senior Frontend & Full Stack",
+    en: "Senior Frontend & Full Stack",
   },
-  "hero.cta.projects": { es: "Ver proyectos", en: "View projects" },
-  "hero.cta.experience": { es: "Experiencia", en: "Experience" },
-  "hero.cta.contact": { es: "Contacto", en: "Contact" },
-  "hero.cv": { es: "CV", en: "CV" },
+  "hero.bio": {
+    es: "Diseñando y construyendo productos digitales, plataformas de analítica y flujos multi-agente claros, usables y orientados a resultados.",
+    en: "Designing and engineering digital products, analytics platforms, and multi-agent systems that are clear, usable, and conversion focused.",
+  },
+  "hero.cta.collaborate": { es: "Colaboremos", en: "Let's collaborate" },
+  "hero.marquee.1": { es: "Orientado a Conversión y Rendimiento", en: "Conversion-Focused Engineering" },
+  "hero.marquee.2": { es: "Calidad sobre Cantidad", en: "Quality Over Quantity" },
+  "hero.marquee.3": { es: "AI-First SDLC & Flujos de Agentes", en: "AI-First SDLC & Agentic Workflows" },
+  "hero.marquee.4": { es: "Disponible Globalmente", en: "Available Worldwide" },
 
-  "hero.stats.years": { es: "Años exp.", en: "Years exp." },
-  "hero.stats.companies": { es: "Empresas", en: "Companies" },
-  "hero.stats.techs": { es: "Tech stacks", en: "Tech stacks" },
+  "projects.watermark": { es: "PORTFOLIO", en: "PORTFOLIO" },
+  "projects.slashTitle": { es: "/SELECTED WORK", en: "/SELECTED WORK" },
+  "projects.filter.all": { es: "Todos", en: "All" },
+  "projects.filter.real": { es: "Proyecto Real", en: "Real Project" },
+  "projects.filter.exploration": { es: "Exploración & IA", en: "Exploration" },
+  "projects.viewAll": { es: "Ver todo el trabajo", en: "View All Work" },
+  "projects.back": { es: "Volver", en: "Back" },
+  "projects.livePreview": { es: "Ver Proyecto", en: "Live Preview" },
+  "projects.contactMe": { es: "Contáctame", en: "Contact Me" },
+  "projects.meta.role": { es: "Rol & Servicio", en: "Service / Role" },
+  "projects.meta.timeline": { es: "Periodo", en: "Timeline" },
+  "projects.meta.stack": { es: "Tecnologías", en: "Tech Stack" },
 
-  "about.section": { es: "Sobre mí", en: "About" },
-  "about.title": {
-    es: "Senior Frontend & Full Stack Engineer con 10+ años de experiencia",
-    en: "Senior Frontend & Full Stack Engineer with 10+ years of experience",
+  "proj.0.title": {
+    es: "Qrvey - Plataforma SaaS de Analítica Embebida y Tiempo Real",
+    en: "Qrvey - Embedded Analytics & Real-Time SaaS Platform",
+  },
+  "proj.0.desc": {
+    es: "Plataforma de analítica embebida, Page Builder drag-and-drop y monitoreo en tiempo real para productos SaaS multi-tenant.",
+    en: "AI-native embedded analytics platform, drag-and-drop Page Builder, and real-time telemetry for multi-tenant SaaS products.",
+  },
+  "proj.0.long": {
+    es: "Lideré la arquitectura frontend de módulos críticos en Qrvey durante 8 años: construcción de un Page Builder drag-and-drop en React y Angular para componer dashboards analíticos interactivos, monitoreo de entidades en tiempo real con Zustand y WebSockets, diseñador visual de flujos automatizados (Workflow Automation) y librerías de Web Components con StencilJS y TypeScript.",
+    en: "Led frontend architecture across critical Qrvey platform modules over 8 years: built a drag-and-drop Page Builder canvas in React and Angular for interactive analytical dashboards, a real-time entity telemetry platform with Zustand and WebSockets, a visual Workflow Automation designer, and company-wide StencilJS/TypeScript Web Component libraries.",
   },
 
-  "about.bio": {
-    es: "Senior Frontend & Full Stack Engineer con más de 10 años de experiencia construyendo aplicaciones web de alto rendimiento, plataformas de analítica de datos y sistemas de UI escalables. Durante más de 8 años en Qrvey, evolucioné desde Junior Frontend Developer hasta Senior Frontend Engineer, liderando la arquitectura frontend y el desarrollo de módulos clave del producto. Especializado en React, Angular, TypeScript, Redux, Zustand y Blazor, junto al diseño e integración de APIs y microservicios con C#/.NET, Node.js y Ruby on Rails. Especializado en ingeniería de agentes (AI-First SDLC & Loop Engineering), orquestando flujos de trabajo multi-agente con especificaciones estructuradas, code review automatizado y testing continuo con Playwright, Cypress y Jest.",
-    en: "Senior Frontend Engineer with 10+ years of experience building web applications, data-driven platforms, and reusable UI systems. During more than 8 years at Qrvey, I grew from a Junior Frontend Developer into a Senior Frontend Engineer, taking on increasingly complex responsibilities across product development, frontend architecture, and technical leadership. My core strength is frontend engineering (React, Angular, TypeScript, Redux, Zustand, Blazor), combined with solid full-stack backend experience (C#/.NET, Node.js, Ruby on Rails). I specialize in AI-First SDLC and Agentic Engineering, designing structured multi-agent workflows and feedback loops with automated testing suites (Playwright, Cypress, Jest).",
+  "proj.1.title": {
+    es: "Cigo Tracker - Optimización de Rutas Multi-Parada y Logística",
+    en: "Cigo Tracker - Multi-Stop Route Optimization & Logistics",
+  },
+  "proj.1.desc": {
+    es: "Plataforma logística de planificación dinámica de rutas multi-parada y seguimiento de entregas de última milla en tiempo real.",
+    en: "Real-time last-mile logistics and dynamic multi-stop route optimization platform powered by Blazor and .NET.",
+  },
+  "proj.1.long": {
+    es: "Ingeniería de interfaces de alto rendimiento en Blazor y migración de servicios legados a microservicios en C# / ASP.NET Core y Entity Framework Core. Lideré el módulo Road Builder integrando GraphHopper para optimización de rutas multi-parada y establecí flujos de desarrollo multi-agente (Agentic SDLC) con validación automatizada en Playwright y Cypress.",
+    en: "Engineered high-performance Blazor interfaces and migrated legacy services to C# / ASP.NET Core and Entity Framework Core microservices. Delivered the Road Builder module with GraphHopper multi-stop routing integration and architected closed-loop multi-agent SDLC workflows validated with Playwright and Cypress.",
   },
 
-  "about.shortBio": {
-    es: "Senior Frontend & Full Stack Engineer con 10+ años construyendo aplicaciones web escalables y sistemas de UI. Especialista en React, Angular, TypeScript, Blazor, .NET y desarrollo multi-agente (AI-First SDLC).",
-    en: "Senior Frontend & Full Stack Engineer with 10+ years building scalable web applications and UI systems. Specialist in React, Angular, TypeScript, Blazor, .NET, and multi-agent development (AI-First SDLC).",
+  "proj.2.title": {
+    es: "401 LAB - Inteligencia Artificial que se puede medir",
+    en: "401 LAB - Measurable AI Solutions & Engineering Studio",
+  },
+  "proj.2.desc": {
+    es: "Firma de arquitectura de soluciones de IA, software a medida e infraestructura cloud enfocada en resultados medibles en seis ejes.",
+    en: "AI solutions architecture, custom software, and cloud engineering firm focused on measurable business outcomes across six axes.",
+  },
+  "proj.2.long": {
+    es: "Co-creador y Arquitecto de Soluciones de IA en 401 LAB (401lab.co). Diseñamos e implementamos sistemas de inteligencia artificial, automatización de procesos, software a la medida e infraestructura cloud bajo una premisa de ingeniería rigurosa: medir cada proyecto en seis ejes (Tiempo, Dinero, Facilidad, Confiabilidad, Mantenimiento y Soporte). La experiencia web incorpora arquitectura isométrica interactiva por capas, lupa dinámica y comparador interactivo entre plano e ingeniería real.",
+    en: "Co-creator and AI Solutions Architect at 401 LAB (401lab.co). We architect and deliver custom AI systems, workflow automation, bespoke software, and cloud infrastructure governed by six measurable axes (Time, Cost, Usability, Reliability, Maintainability, and Support). The interactive web platform features layered isometric software visualizations, a live loupe spotlight, and an interactive blueprint-to-reality engineering comparator.",
   },
 
-  "about.soft_skills": { es: "Competencias Clave", en: "Key Competencies" },
+  "proj.3.title": {
+    es: "FinanzApp - Plataforma de Finanzas Personales con Agente IA",
+    en: "FinanzApp - AI-Powered Personal Finance Platform",
+  },
+  "proj.3.desc": {
+    es: "Aplicación financiera full stack con un agente de IA para optimizar la gestión de presupuestos y gastos personales.",
+    en: "Full-stack financial web application featuring an autonomous AI agent for personal budget analysis and expense tracking.",
+  },
+  "proj.3.long": {
+    es: "Desarrollo de una aplicación financiera moderna con Next.js 16 y React 19 en el frontend, junto a una API backend en Node.js, Express y MongoDB. Incluye un agente inteligente que asiste en el análisis presupuestario, categorización automática y control de metas financieras.",
+    en: "Built a modern full-stack financial platform with Next.js 16 and React 19 paired with a Node.js, Express, and MongoDB backend. Features an integrated conversational AI agent that analyzes spending patterns, automates categorization, and provides actionable budget insights.",
+  },
 
-  "skills.section": { es: "Habilidades", en: "Skills" },
-  "skills.title": { es: "Tech Stack & Especialidades", en: "Tech Stack & Specializations" },
-  "skills.cat.frontend": { es: "Frontend Engineering & Core", en: "Frontend Engineering & Core" },
-  "skills.cat.aifirst": { es: "AI-First SDLC & Agentic Engineering", en: "AI-First SDLC & Agentic Engineering" },
-  "skills.cat.testing": { es: "Testing & Quality Assurance", en: "Testing & Quality Assurance" },
-  "skills.cat.backend": { es: "Backend & APIs", en: "Backend & APIs" },
-  "skills.cat.devops": { es: "DevOps, Cloud & Tooling", en: "DevOps, Cloud & Tooling" },
+  "service.watermark": { es: "SERVICE", en: "SERVICE" },
+  "service.slashTitle": { es: "/SERVICE", en: "/SERVICE" },
+  "service.0.title": { es: "ARQUITECTURA FRONTEND & SISTEMAS UI", en: "FRONTEND ARCHITECTURE & UI" },
+  "service.0.desc": {
+    es: "Diseño y desarrollo de interfaces claras, escalables y de alto rendimiento para dashboards analíticos, plataformas SaaS multi-tenant y librerías de componentes.",
+    en: "Designing clear, high-performance, and scalable interfaces for enterprise dashboards, multi-tenant SaaS platforms, and reusable component libraries.",
+  },
+  "service.1.title": { es: "AI-FIRST SDLC & FLUJOS DE AGENTES", en: "AI-FIRST SDLC & AGENTIC WORKFLOWS" },
+  "service.1.desc": {
+    es: "Orquestación de loops de desarrollo multi-agente, Spec-Driven Development (SDD) y validación automatizada en ciclo cerrado que acelera la entrega un 50%.",
+    en: "Orchestrating autonomous multi-agent coding loops, Spec-Driven Development (SDD), and closed-loop automated validation that accelerate delivery by 50%.",
+  },
+  "service.2.title": { es: "FULL STACK & MICROSERVICIOS", en: "FULL STACK & MICROSERVICES" },
+  "service.2.desc": {
+    es: "Construcción de APIs resilientes, modelos relacionales y microservicios distribuidos con C#/.NET, Node.js, Entity Framework Core y PostgreSQL.",
+    en: "Engineering resilient backend APIs, relational data models, and distributed microservices with C#/.NET, Node.js, Entity Framework Core, and PostgreSQL.",
+  },
+  "service.3.title": { es: "QUALITY GATES & CLOUD DEVOPS", en: "QUALITY GATES & CLOUD DEVOPS" },
+  "service.3.desc": {
+    es: "Despliegues sin regresiones mediante suites E2E en Playwright/Cypress, contenedores Docker/Kubernetes y pipelines de integración continua.",
+    en: "Guaranteeing zero-regression deployments with end-to-end Playwright/Cypress suites, containerized Docker/Kubernetes clusters, and automated CI/CD pipelines.",
+  },
 
-  "experience.section": { es: "Trayectoria", en: "Career" },
-  "experience.title": { es: "Experiencia Laboral", en: "Work Experience" },
-  "experience.awards": { es: "Reconocimientos", en: "Honors & Awards" },
-  "experience.certifications": { es: "Certificaciones", en: "Certifications" },
+  "experience.watermark": { es: "EXPERIENCE", en: "EXPERIENCE" },
+  "experience.slashTitle": { es: "/EXPERIENCE", en: "/EXPERIENCE" },
+  "experience.years": { es: "10+ años de experiencia", en: "10+ years of experience" },
+  "experience.awards": { es: "Reconocimientos & Educación", en: "Honors, Certifications & Education" },
 
   // Cigo Tracker
   "exp.cigo-tracker.role": {
@@ -58,7 +121,7 @@ export const translations = {
     en: "Senior Full Stack Developer (Frontend & Agentic Workflows)",
   },
   "exp.cigo-tracker.company": { es: "Cigo Tracker", en: "Cigo Tracker" },
-  "exp.cigo-tracker.period": { es: "Feb 2026 – Ago 2026 (Remoto)", en: "Feb 2026 – Aug 2026 (Remote / Fixed-term)" },
+  "exp.cigo-tracker.period": { es: "Feb 2026 – Ago 2026", en: "Feb 2026 – Aug 2026" },
   "exp.cigo-tracker.desc.0": {
     es: "Desarrollo de interfaces frontend de alto rendimiento en Blazor, transformando sistemas de diseño de Figma en componentes accesibles y responsivos conectados a microservicios en C#/.NET.",
     en: "Engineered high-performance frontend interfaces in Blazor, translating Figma design systems into responsive, accessible UI components connected to C#/.NET backend microservices.",
@@ -82,7 +145,7 @@ export const translations = {
     en: "Senior Frontend Engineer",
   },
   "exp.qrvey.company": { es: "Qrvey Inc", en: "Qrvey Inc" },
-  "exp.qrvey.period": { es: "Ene 2018 – Ene 2026 (8 Años)", en: "Jan 2018 – Jan 2026 (8 Years)" },
+  "exp.qrvey.period": { es: "Ene 2018 – Ene 2026", en: "Jan 2018 – Jan 2026" },
   "exp.qrvey.desc.0": {
     es: "Crecimiento profesional continuo desde Junior Frontend Developer hasta Senior Frontend Engineer, liderando el desarrollo frontend del suite Admin, analítica avanzada y módulos principales con React, Angular, TypeScript, Redux y Zustand.",
     en: "Promoted from Junior Frontend Developer to Senior Frontend Engineer, leading frontend development across the Admin suite, analytics features, and core platform modules using React, Angular, TypeScript, Redux, and Zustand.",
@@ -148,49 +211,34 @@ export const translations = {
   },
 
   "cert.0.title": { es: "Kubernetes para administradores IT esencial", en: "Kubernetes for IT Administrators Essential" },
-  "cert.0.platform": { es: "LinkedIn Learning", en: "LinkedIn Learning" },
+  "cert.0.platform": { es: "LinkedIn Learning · Oct 2025", en: "LinkedIn Learning · Oct 2025" },
+  "edu.degree": { es: "Ingeniería de Sistemas", en: "B.S. in Systems Engineering" },
+  "edu.university": { es: "Universidad Tecnológica de Bolívar · 2018", en: "Universidad Tecnológica de Bolívar · 2018" },
 
-  "proj.0.title": { es: "FinanzApp", en: "FinanzApp" },
-  "proj.0.desc": {
-    es: "Aplicación financiera full stack con un agente de IA para optimizar la gestión de finanzas personales.",
-    en: "Full-stack financial application with an AI agent to optimize personal finance management.",
-  },
-  "proj.1.title": { es: "Qrvey", en: "Qrvey" },
-  "proj.1.desc": {
-    es: "Plataforma de analítica embebida y dashboards interactivos con IA para productos SaaS multi-tenant.",
-    en: "AI-native embedded analytics platform with interactive dashboards for multi-tenant SaaS products.",
-  },
-  "proj.2.title": { es: "Cigo Tracker", en: "Cigo Tracker" },
-  "proj.2.desc": {
-    es: "Plataforma logística de planificación de rutas multi-parada y seguimiento de entregas en tiempo real.",
-    en: "Real-time last-mile logistics and multi-stop dynamic route optimization platform.",
+  "about.label": { es: "SOBRE MÍ", en: "ABOUT ME" },
+  "about.bio": {
+    es: "Soy Kevin Julio, Senior Frontend & Full Stack Engineer con más de 10 años ayudando a empresas de producto y equipos de ingeniería a transformar arquitecturas complejas en plataformas digitales simples, rápidas y escalables.",
+    en: "I'm Kevin Julio, a Senior Frontend & Full Stack Engineer with 10+ years helping product companies and engineering teams turn complex architectures into simple, fast, and scalable digital platforms.",
   },
 
-  "projects.section": { es: "Trabajos", en: "Projects" },
-  "projects.title": { es: "Proyectos Destacados", en: "Featured Projects" },
-  "projects.description": {
-    es: "Una selección de proyectos y arquitecturas de software en los que he trabajado, desde aplicaciones analíticas hasta plataformas logísticas.",
-    en: "A selection of projects and software architectures I've built, from analytics engines to real-time logistics platforms.",
-  },
-  "projects.more": { es: "Más proyectos", en: "More projects" },
+  "references.slashTitle": { es: "/REFERENCES", en: "/REFERENCES" },
+  "references.watermark": { es: "FEEDBACK", en: "FEEDBACK" },
+  "references.subtitle": { es: "Referencias profesionales verificadas", en: "Verified professional references" },
 
-  "contact.section": { es: "Contacto", en: "Contact" },
-  "contact.title": { es: "Hablemos de tu próximo proyecto", en: "Let's talk about your next project" },
+  "contact.available": { es: "Disponible para nuevo proyecto", en: "Available for New Project" },
+  "contact.headline": { es: "HAVE A PROJECT IN MIND?", en: "HAVE A PROJECT IN MIND?" },
   "contact.description": {
-    es: "Estoy abierto a nuevas oportunidades de ingeniería frontend, full stack o arquitectura de agentes de IA. Si crees que puedo aportar a tu equipo, conversemos.",
-    en: "I'm open to new opportunities in frontend engineering, full-stack systems, or AI agent architectures. If you think I can add value to your team, let's connect.",
+    es: "Juntos podemos construir software claro, escalable y de alto impacto. Colaboremos para llevar tu plataforma o arquitectura al siguiente nivel.",
+    en: "Together, we can create something clear and impactful. Let's collaborate to bring your ideas to life in a way that resonates with everyone.",
   },
-
-  "references.section": { es: "Referencias", en: "References" },
-  "references.title": { es: "Lo que dicen mis colegas", en: "What colleagues say" },
-
+  "contact.cta": { es: "Contáctame", en: "Contact Me" },
   "download.cv": { es: "Descargar CV", en: "Download CV" },
 
   "footer.rights": { es: "Todos los derechos reservados.", en: "All rights reserved." },
 
-  "theme:light": { es: "Light", en: "Light" },
-  "theme:dark": { es: "Dark", en: "Dark" },
-  "theme:system": { es: "System", en: "System" },
+  "theme:light": { es: "Claro", en: "Light" },
+  "theme:dark": { es: "Oscuro", en: "Dark" },
+  "theme:system": { es: "Sistema", en: "System" },
 };
 
 export type Lang = "es" | "en";

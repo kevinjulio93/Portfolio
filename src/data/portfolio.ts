@@ -1,9 +1,16 @@
 export interface Project {
   id: string;
   title: string;
+  subtitle: string;
+  category: "real" | "exploration";
+  categoryLabel: string;
+  client: string;
+  role: string;
+  period: string;
   description: string;
   longDescription: string;
   image: string;
+  pills: string[];
   tags: string[];
   demoUrl?: string;
   githubUrl?: string;
@@ -15,11 +22,27 @@ export interface Skill {
   category: string;
 }
 
+export interface ServiceItem {
+  id: string;
+  titleKey: string;
+  title: string;
+  descKey: string;
+  description: string;
+  skillCategory: string;
+  previewScreens: {
+    label: string;
+    metric: string;
+    sub: string;
+    accent: string;
+  }[];
+}
+
 export interface WorkExperience {
   id: string;
   company: string;
   role: string;
   period: string;
+  summary: string;
   description: string[];
   tags: string[];
 }
@@ -44,14 +67,17 @@ export interface Certification {
 }
 
 export const personalInfo = {
+  firstName: "KEVIN",
+  lastName: "JULIO",
   name: "Kevin Andres Julio Marquez",
   role: "Senior Frontend & Full Stack Engineer",
+  shortRole: "Senior Frontend & Full Stack",
   tagline: "AI-First SDLC • Agentic Workflows",
   email: "kevinjulio93@gmail.com",
   phone: "(+57) 318 531 2757",
   location: "Cartagena, Colombia",
   bio: "Senior Frontend & Full Stack Engineer con más de 10 años de experiencia construyendo aplicaciones web de alto rendimiento, plataformas de analítica de datos y sistemas de UI escalables. Durante más de 8 años en Qrvey, evolucioné desde Junior Frontend Developer hasta Senior Frontend Engineer, liderando la arquitectura frontend y el desarrollo de módulos clave del producto. Especializado en React, Angular, TypeScript, Redux, Zustand y Blazor, junto al diseño e integración de APIs y microservicios con C#/.NET, Node.js y Ruby on Rails. Especializado en ingeniería de agentes (AI-First SDLC & Loop Engineering), orquestando flujos de trabajo multi-agente con especificaciones estructuradas, code review automatizado y testing continuo con Playwright, Cypress y Jest.",
-  shortBio: "Senior Frontend & Full Stack Engineer con 10+ años construyendo aplicaciones web escalables y sistemas de UI. Especialista en React, Angular, TypeScript, Blazor, .NET y desarrollo multi-agente (AI-First SDLC).",
+  shortBio: "Diseñando y construyendo productos digitales, plataformas de analítica y flujos multi-agente claros, escalables y orientados a resultados.",
   education: {
     degree: "Bachelor's Degree in Systems Engineering",
     university: "Universidad Tecnológica de Bolívar",
@@ -90,14 +116,6 @@ export const skills: Skill[] = [
   { name: "Test-Driven AI Generation", category: "AI-First SDLC" },
   { name: "Agent Tooling / MCP", category: "AI-First SDLC" },
 
-  // Testing & Quality Assurance
-  { name: "Playwright", category: "Testing" },
-  { name: "Cypress", category: "Testing" },
-  { name: "Jest", category: "Testing" },
-  { name: "Vitest", category: "Testing" },
-  { name: "React Testing Library", category: "Testing" },
-  { name: "E2E Testing", category: "Testing" },
-
   // Backend & APIs
   { name: "Node.js", category: "Backend" },
   { name: "C#", category: "Backend" },
@@ -106,7 +124,13 @@ export const skills: Skill[] = [
   { name: "RESTful APIs", category: "Backend" },
   { name: "PostgreSQL", category: "Backend" },
 
-  // DevOps, Cloud & Tooling
+  // Testing & DevOps
+  { name: "Playwright", category: "Testing" },
+  { name: "Cypress", category: "Testing" },
+  { name: "Jest", category: "Testing" },
+  { name: "Vitest", category: "Testing" },
+  { name: "React Testing Library", category: "Testing" },
+  { name: "E2E Testing", category: "Testing" },
   { name: "Docker", category: "DevOps" },
   { name: "Kubernetes", category: "DevOps" },
   { name: "Linux", category: "DevOps" },
@@ -116,6 +140,65 @@ export const skills: Skill[] = [
   { name: "Cloudflare", category: "DevOps" },
   { name: "Supabase", category: "DevOps" },
   { name: "Git", category: "DevOps" },
+];
+
+export const services: ServiceItem[] = [
+  {
+    id: "frontend-arch",
+    titleKey: "service.0.title",
+    title: "FRONTEND ARCHITECTURE & UI",
+    descKey: "service.0.desc",
+    description:
+      "Designing clear, high-performance, and scalable interfaces for enterprise dashboards, multi-tenant SaaS platforms, and reusable component libraries.",
+    skillCategory: "Frontend",
+    previewScreens: [
+      { label: "Dashboard Canvas", metric: "60 FPS", sub: "Drag & Drop Widgets", accent: "#18181b" },
+      { label: "Design System", metric: "45+ UI", sub: "StencilJS & React", accent: "#27272a" },
+      { label: "Live Telemetry", metric: "< 12ms", sub: "Zustand + WebSockets", accent: "#3f3f46" },
+    ],
+  },
+  {
+    id: "ai-sdlc",
+    titleKey: "service.1.title",
+    title: "AI-FIRST SDLC & AGENTIC WORKFLOWS",
+    descKey: "service.1.desc",
+    description:
+      "Orchestrating autonomous multi-agent coding loops, Spec-Driven Development (SDD), and closed-loop automated validation that accelerate delivery by 50%.",
+    skillCategory: "AI-First SDLC",
+    previewScreens: [
+      { label: "Spec Gate G0", metric: "98/100", sub: "Deterministic SDD", accent: "#18181b" },
+      { label: "Agent Loop", metric: "4 Agents", sub: "Arch • Dev • QA • Sec", accent: "#27272a" },
+      { label: "Throughput", metric: "+50%", sub: "Closed-Loop PRs", accent: "#3f3f46" },
+    ],
+  },
+  {
+    id: "fullstack-apis",
+    titleKey: "service.2.title",
+    title: "FULL STACK & MICROSERVICES",
+    descKey: "service.2.desc",
+    description:
+      "Engineering resilient backend APIs, relational data models, and distributed microservices with C#/.NET, Node.js, Entity Framework Core, and PostgreSQL.",
+    skillCategory: "Backend",
+    previewScreens: [
+      { label: "Route Engine", metric: "Multi-Stop", sub: "ASP.NET Core + GraphHopper", accent: "#18181b" },
+      { label: "Data Layer", metric: "ACID", sub: "PostgreSQL & EF Core", accent: "#27272a" },
+      { label: "API Gateway", metric: "99.9%", sub: "REST & Real-Time Streams", accent: "#3f3f46" },
+    ],
+  },
+  {
+    id: "qa-cloud",
+    titleKey: "service.3.title",
+    title: "QUALITY GATES & CLOUD DEVOPS",
+    descKey: "service.3.desc",
+    description:
+      "Guaranteeing zero-regression deployments with end-to-end Playwright/Cypress suites, containerized Docker/Kubernetes clusters, and automated CI/CD pipelines.",
+    skillCategory: "Testing",
+    previewScreens: [
+      { label: "E2E Automation", metric: "100%", sub: "Playwright & Cypress", accent: "#18181b" },
+      { label: "Cloud Native", metric: "K8s", sub: "Docker & Kubernetes", accent: "#27272a" },
+      { label: "Edge & Cache", metric: "Global", sub: "Cloudflare, Nginx & Redis", accent: "#3f3f46" },
+    ],
+  },
 ];
 
 export const softSkills: string[] = [
@@ -134,7 +217,8 @@ export const workExperience: WorkExperience[] = [
     id: "cigo-tracker",
     company: "Cigo Tracker",
     role: "Senior Full Stack Developer (Frontend & Agentic Workflows)",
-    period: "Feb 2026 – Ago 2026",
+    period: "Feb 2026 – Aug 2026",
+    summary: "Blazor UI architecture, C#/.NET microservices, GraphHopper route optimization & multi-agent SDLC loops.",
     description: [
       "Desarrollo de interfaces frontend de alto rendimiento en Blazor, transformando sistemas de diseño de Figma en componentes accesibles y responsivos conectados a microservicios en C#/.NET.",
       "Road Builder: Lideré la interfaz frontend e integración de APIs de enrutamiento GraphHopper para optimización dinámica de rutas multi-parada; migración de servicios legados en PHP a ASP.NET Core y Entity Framework Core.",
@@ -147,7 +231,8 @@ export const workExperience: WorkExperience[] = [
     id: "qrvey",
     company: "Qrvey Inc",
     role: "Senior Frontend Engineer",
-    period: "Ene 2018 – Ene 2026 (8 Años)",
+    period: "Jan 2018 – Jan 2026",
+    summary: "8 years leading embedded analytics, drag-and-drop Page Builder, WebSockets telemetry & StencilJS/React design systems.",
     description: [
       "Crecimiento profesional continuo desde Junior Frontend Developer hasta Senior Frontend Engineer, liderando el desarrollo frontend del suite Admin, analítica avanzada y módulos principales con React, Angular, TypeScript, Redux y Zustand.",
       "Page Builder & Dashboards: Construcción de un canvas drag-and-drop en React y Angular para componer gráficos complejos, widgets, filtros dinámicos y visualización interactiva de datos con visibilidad basada en roles (RBAC).",
@@ -163,6 +248,7 @@ export const workExperience: WorkExperience[] = [
     company: "Qualty SAS & Software Projects",
     role: "Full Stack Developer & Co-Founder",
     period: "Oct 2017 – Sep 2018",
+    summary: "Co-founded digital product studio building full-stack Ruby on Rails, PostgreSQL & Docker web platforms.",
     description: [
       "Desarrollo de aplicaciones web full stack y servicios API usando Ruby on Rails, PostgreSQL y JavaScript moderno, construyendo modelos de datos relacionales, controladores de lógica de negocio e interfaces responsivas.",
       "Diseño de flujos de experiencia de usuario (UI/UX) y configuración de entornos de despliegue contenerizados mediante Docker.",
@@ -174,7 +260,8 @@ export const workExperience: WorkExperience[] = [
     id: "aservices",
     company: "Aservices SAS",
     role: "Frontend Developer",
-    period: "Nov 2016 – Ago 2017",
+    period: "Nov 2016 – Aug 2017",
+    summary: "Modular frontend engineering with modern ES6+ JavaScript, SASS architecture, and RESTful API integrations.",
     description: [
       "Desarrollo y mantenimiento de interfaces web modulares con JavaScript (ES6+), HTML5 y CSS/SASS, optimizando usabilidad y diseño responsive.",
       "Integración de APIs RESTful y optimización del rendimiento y renderizado cross-browser en colaboración con el equipo multidisciplinario.",
@@ -216,36 +303,76 @@ export const references: Reference[] = [
 
 export const projects: Project[] = [
   {
-    id: "proyecto-finanzapp",
-    title: "FinanzApp",
-    description: "Aplicación financiera full stack con un agente de IA para optimizar la gestión de finanzas personales.",
-    longDescription:
-      "Desarrollo de una aplicación financiera moderna con frontend en Next.js 16 y React 19, junto a una API backend en Node.js y Express. Incluye un agente de IA que asiste en el análisis presupuestario y control de gastos personales con MongoDB.",
-    image: "/projects/finanzapp.jpg",
-    tags: ["Next.js 16", "React 19", "Node.js", "Express", "MongoDB", "AI Agent"],
-    demoUrl: "https://finanzapp.juliomarquez.dev/",
-    featured: true,
-  },
-  {
     id: "proyecto-qrvey",
-    title: "Qrvey",
-    description: "Plataforma de analítica embebida y dashboards interactivos con IA para productos SaaS multi-tenant.",
+    title: "Qrvey - Embedded Analytics & Real-Time SaaS Platform",
+    subtitle: "Qrvey",
+    category: "real",
+    categoryLabel: "REAL PROJECT",
+    client: "Qrvey Inc",
+    role: "Senior Frontend Engineer",
+    period: "8 Years (2018 – 2026)",
+    description: "Plataforma de analítica embebida, Page Builder drag-and-drop y monitoreo en tiempo real para productos SaaS multi-tenant.",
     longDescription:
-      "Contribuí a la arquitectura frontend de la plataforma de analítica embebida para SaaS, desarrollando un Page Builder drag-and-drop, monitoreo en tiempo real con WebSockets/Zustand y automatización de flujos.",
+      "Lideré la arquitectura frontend de módulos críticos en Qrvey: un Page Builder drag-and-drop en React y Angular para componer dashboards analíticos interactivos, una plataforma de monitoreo de entidades en tiempo real con Zustand y WebSockets, un diseñador visual de flujos automatizados (Workflow Automation) y librerías de Web Components con StencilJS y TypeScript.",
     image: "/projects/qrvey.jpg",
-    tags: ["React", "Angular", "TypeScript", "Zustand", "WebSockets", "Docker", "Kubernetes"],
+    pills: ["SaaS Platform", "Qrvey Inc"],
+    tags: ["React", "Angular", "TypeScript", "Zustand", "WebSockets", "StencilJS", "Kubernetes"],
     demoUrl: "https://qrvey.com/",
     featured: true,
   },
   {
     id: "proyecto-cigo-tracker",
-    title: "Cigo Tracker",
-    description: "Plataforma logística de planificación de rutas multi-parada y seguimiento de entregas en tiempo real.",
+    title: "Cigo Tracker - Multi-Stop Route Optimization & Logistics",
+    subtitle: "Cigo Tracker",
+    category: "real",
+    categoryLabel: "REAL PROJECT",
+    client: "Cigo Tracker",
+    role: "Senior Full Stack Developer",
+    period: "2026",
+    description: "Plataforma logística de planificación dinámica de rutas multi-parada y seguimiento de entregas de última milla en tiempo real.",
     longDescription:
-      "Desarrollo de módulos frontend de alto rendimiento con Blazor y microservicios en C#/.NET, integrando GraphHopper para optimización de rutas y flujos de desarrollo con agentes de IA.",
+      "Ingeniería de interfaces de alto rendimiento en Blazor y migración de servicios legados a microservicios en C# / ASP.NET Core y Entity Framework Core. Lideré el módulo Road Builder integrando GraphHopper para optimización de rutas multi-parada y establecí flujos de desarrollo multi-agente (Agentic SDLC) con validación automatizada en Playwright y Cypress.",
     image: "/projects/cigo-tracker.jpg",
-    tags: ["Blazor", "C#", ".NET", "Entity Framework Core", "GraphHopper", "Agentic SDLC"],
+    pills: ["Logistics SaaS", "Cigo Tracker"],
+    tags: ["Blazor", "C#", "ASP.NET Core", "EF Core", "GraphHopper", "Agentic SDLC", "Playwright"],
     demoUrl: "https://cigotracker.com/",
+    featured: true,
+  },
+  {
+    id: "proyecto-401lab",
+    title: "401 LAB - Measurable AI Solutions & Engineering Studio",
+    subtitle: "401 LAB",
+    category: "real",
+    categoryLabel: "REAL PROJECT",
+    client: "401 LAB (Cartagena, Colombia)",
+    role: "AI Solutions Architect & Co-Creator",
+    period: "2026 – Present",
+    description:
+      "Firma de arquitectura de soluciones de IA, software a medida e infraestructura cloud enfocada en resultados medibles en seis ejes.",
+    longDescription:
+      "Co-creador y Arquitecto de Soluciones de IA en 401 LAB (401lab.co). Diseñamos e implementamos sistemas de inteligencia artificial, automatización de procesos, software a la medida, infraestructura cloud y ciberseguridad bajo una premisa de ingeniería rigurosa: medir cada proyecto en seis ejes (Tiempo, Dinero, Facilidad, Confiabilidad, Mantenimiento y Soporte). La plataforma web integra visualizaciones isométricas interactivas por capas (Interfaz, Lógica, Modelos, Datos), lupa dinámica e indicadores de impacto en tiempo real.",
+    image: "/projects/401lab.gif",
+    pills: ["AI Architecture", "401lab.co"],
+    tags: ["AI Solutions Architecture", "Interactive Web", "Custom Software", "Cloud Infrastructure", "ML & Automation"],
+    demoUrl: "https://401lab.co/",
+    featured: true,
+  },
+  {
+    id: "proyecto-finanzapp",
+    title: "FinanzApp - AI-Powered Personal Finance Platform",
+    subtitle: "FinanzApp",
+    category: "exploration",
+    categoryLabel: "EXPLORATION",
+    client: "Independent AI Product",
+    role: "Full Stack & AI Engineer",
+    period: "2025 – 2026",
+    description: "Aplicación financiera full stack con agente de inteligencia artificial para análisis presupuestario y control de finanzas.",
+    longDescription:
+      "Desarrollo de una plataforma financiera moderna con Next.js 16 y React 19 en el frontend, conectada a una arquitectura backend en Node.js, Express y MongoDB. Integra un agente conversacional de IA que analiza patrones de gasto, sugiere optimizaciones presupuestarias y automatiza el seguimiento financiero en tiempo real.",
+    image: "/projects/finanzapp.jpg",
+    pills: ["Web Application", "AI Agent"],
+    tags: ["Next.js 16", "React 19", "TypeScript", "Node.js", "MongoDB", "AI Agent"],
+    demoUrl: "https://finanzapp.juliomarquez.dev/",
     featured: true,
   },
 ];

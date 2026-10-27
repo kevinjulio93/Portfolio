@@ -1,40 +1,60 @@
 ---
-import { references } from "../data/portfolio";
+import { references, personalInfo } from "../data/portfolio";
 ---
 
-<section id="references" class="py-32 relative bg-muted/30">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16 animate-slide-up">
-      <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="references.section">Referencias</span>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4" data-i18n="references.title">
-        Lo que dicen mis colegas
-      </h2>
+<section
+  id="references"
+  class="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-16 sm:pt-28 pb-16 border-b border-black/[0.06] dark:border-white/[0.08] overflow-hidden"
+>
+  <div class="max-w-[2240px] mx-auto grid lg:grid-cols-12 gap-10 2xl:gap-16 items-start">
+    <!-- Left Column: About & Approach (Inspired by Shot 2 ABOUT ME layout) -->
+    <div class="lg:col-span-7">
+      <span
+        class="text-[12px] font-medium uppercase tracking-[0.06em] text-[#71717a]"
+        data-i18n="about.label"
+      >
+        ABOUT ME
+      </span>
+      <p
+        class="mt-4 text-[22px] sm:text-[28px] md:text-[32px] font-medium tracking-[-0.03em] text-[#18181b] dark:text-white leading-[1.28]"
+        data-i18n="about.bio"
+      >
+        I'm Kevin Julio, a Senior Frontend & Full Stack Engineer with 10+ years helping product companies and engineering teams turn complex architectures into simple, fast, and scalable digital platforms.
+      </p>
+      <p class="mt-4 text-[14.5px] text-[#71717a] dark:text-[#a1a1aa] leading-[1.65] max-w-[620px]">
+        {personalInfo.location} · {personalInfo.education.degree} ({personalInfo.education.university})
+      </p>
     </div>
 
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 stagger-children">
+    <!-- Right Column: Verified Colleague References -->
+    <div class="lg:col-span-5 space-y-3.5">
+      <span
+        class="block text-[12px] font-medium uppercase tracking-[0.06em] text-[#71717a] mb-3"
+        data-i18n="references.subtitle"
+      >
+        Verified professional references
+      </span>
       {references.map((ref) => (
-        <div class="p-6 rounded-2xl border border-border/50 bg-gradient-to-br from-background/40 to-background/20 hover:bg-background hover:border-primary/20 transition-all hover:-translate-y-1 hover:shadow-md">
-          <div class="flex items-start gap-4">
-            <!-- Avatar placeholder -->
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-emerald-500/20 flex items-center justify-center shrink-0 border border-primary/10">
-              <span class="text-sm font-bold bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent">
-                {ref.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
-              </span>
-            </div>
-            <div class="flex-1 min-w-0">
-              <p class="font-medium text-sm truncate">{ref.name}</p>
-              <p class="text-xs text-primary">{ref.role}</p>
-              <div class="flex flex-col gap-1 mt-3 text-xs text-muted-foreground">
-                <a href={`tel:${ref.phone}`} class="hover:text-foreground transition-colors inline-flex items-center gap-1.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  {ref.phone}
-                </a>
-                <a href={`mailto:${ref.email}`} class="hover:text-foreground transition-colors inline-flex items-center gap-1.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  <span class="truncate">{ref.email}</span>
-                </a>
-              </div>
-            </div>
+        <div class="p-5 rounded-[14px] bg-[#f9fafb] dark:bg-[#141416] border border-black/[0.05] dark:border-white/[0.07] flex items-center justify-between gap-4">
+          <div>
+            <p class="text-[16px] font-semibold tracking-[-0.02em] text-[#18181b] dark:text-white">
+              {ref.name}
+            </p>
+            <p class="text-[13px] text-[#71717a] dark:text-[#a1a1aa] mt-0.5">{ref.role}</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a
+              href={`mailto:${ref.email}`}
+              class="px-3.5 py-1.5 rounded-full border border-[#e5e7eb] dark:border-white/[0.1] bg-white dark:bg-[#1c1c1f] text-[12px] font-medium text-[#18181b] dark:text-[#e4e4e7] hover:bg-[#18181b] hover:text-white dark:hover:bg-white dark:hover:text-[#18181b] transition-colors"
+            >
+              Email
+            </a>
+            <a
+              href={`tel:${ref.phone}`}
+              class="px-3.5 py-1.5 rounded-full border border-[#e5e7eb] dark:border-white/[0.1] bg-white dark:bg-[#1c1c1f] text-[12px] font-medium text-[#18181b] dark:text-[#e4e4e7] hover:bg-[#18181b] hover:text-white dark:hover:bg-white dark:hover:text-[#18181b] transition-colors"
+            >
+              Call
+            </a>
           </div>
         </div>
       ))}
