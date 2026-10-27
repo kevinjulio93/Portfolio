@@ -8,8 +8,8 @@ function getPreferredTheme(): "light" | "dark" {
 }
 
 export function getStoredTheme(): Theme {
-  if (typeof window === "undefined") return "system";
-  return (localStorage.getItem(THEME_KEY) as Theme) ?? "system";
+  if (typeof window === "undefined") return "light";
+  return (localStorage.getItem(THEME_KEY) as Theme) ?? "light";
 }
 
 export function getEffectiveTheme(): "light" | "dark" {
@@ -26,7 +26,6 @@ export function applyTheme(): void {
   } else {
     root.classList.remove("dark");
   }
-  // Dispatch event for UI updates
   window.dispatchEvent(new CustomEvent("theme-changed", { detail: { theme: effective, stored: getStoredTheme() } }));
 }
 
@@ -37,7 +36,6 @@ export function setTheme(theme: Theme): void {
 
 export function initTheme(): void {
   applyTheme();
-  // Listen for OS-level changes when in system mode
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
     if (getStoredTheme() === "system") applyTheme();
   });

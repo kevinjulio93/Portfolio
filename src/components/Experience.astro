@@ -1,104 +1,214 @@
 ---
-import { workExperience, awards, certifications } from "../data/portfolio";
+import { workExperience, awards, certifications, personalInfo } from "../data/portfolio";
 ---
 
-<section id="experience" class="py-32 relative">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="experience.section">Trayectoria</span>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4">
-        <span data-i18n="experience.title">Experiencia Laboral</span>
-      </h2>
+<section
+  id="experience"
+  class="relative w-full bg-[#222224] text-white px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24 py-16 sm:py-24 2xl:py-32 overflow-hidden"
+>
+  <div class="max-w-[2240px] mx-auto">
+  <!-- Watermark + /EXPERIENCE Header + Years Counter (Exact Match to Video 00:11-00:14) -->
+  <div class="relative select-none pt-2 pb-10 sm:pb-16">
+    <div
+      class="watermark-text-dark text-[clamp(2.2rem,10.5vw,11.8rem)] leading-none tracking-[0.03em] sm:tracking-[0.04em] truncate"
+      aria-hidden="true"
+      data-i18n="experience.watermark"
+    >
+      EXPERIENCE
     </div>
+    <div class="relative z-10 -mt-3 sm:-mt-9 md:-mt-14 flex flex-wrap items-baseline justify-between gap-4">
+      <h2
+        class="text-[clamp(1.65rem,4vw,3.5rem)] font-medium tracking-[-0.03em] text-white"
+        data-i18n="experience.slashTitle"
+      >
+        /EXPERIENCE
+      </h2>
+      <span
+        class="text-[14px] sm:text-[15px] text-[#a1a1aa] font-normal tracking-[-0.01em]"
+        data-i18n="experience.years"
+      >
+        10+ years of experience
+      </span>
+    </div>
+  </div>
 
-    <div class="max-w-4xl mx-auto relative">
-      <!-- Timeline line with gradient -->
-      <div class="absolute left-[19px] md:left-[31px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-500/40 via-violet-500/40 to-emerald-500/40" />
-
-      {workExperience.map((job, i) => (
-        <div class="exp-item relative pl-14 md:pl-16 pb-16 last:pb-0">
-          <!-- Timeline dot with glow -->
-          <div class="absolute left-[10px] md:left-[22px] top-1 w-[22px] h-[22px] rounded-full border-[3px] border-primary bg-background z-10 shadow-[0_0_10px_hsl(var(--primary)/0.3)]">
-            <div class="absolute inset-[-4px] rounded-full border border-primary/30" />
+  <!-- Experience Rows with Hover Tilted Showcase Card (Video 00:12-00:14) -->
+  <div class="divide-y divide-white/[0.08] border-t border-b border-white/[0.08]">
+    {workExperience.map((job, idx) => (
+      <div
+        class="exp-row group relative py-7 sm:py-8 transition-colors"
+        data-exp-index={idx}
+        data-open={idx === 0 ? "true" : "false"}
+      >
+        <!-- Main Row Header -->
+        <button
+          type="button"
+          class="exp-row-toggle w-full flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-left cursor-pointer active:scale-[0.996] transition-transform duration-150"
+          aria-expanded={idx === 0 ? "true" : "false"}
+        >
+          <div>
+            <h3
+              class="text-[19px] sm:text-[22px] font-medium tracking-[-0.02em] text-white group-hover:text-white/90 transition-colors"
+              data-i18n={`exp.${job.id}.company`}
+            >
+              {job.company}
+            </h3>
+            <p
+              class="text-[14px] sm:text-[15px] text-[#9ca3af] mt-1 font-normal tracking-[-0.01em]"
+              data-i18n={`exp.${job.id}.role`}
+            >
+              {job.role}
+            </p>
           </div>
 
-          <!-- Card -->
-          <div class="group p-6 md:p-8 rounded-2xl border border-border/50 bg-gradient-to-br from-background/60 to-background/30 hover:bg-background hover:border-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)]">
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-              <div>
-                <h3 class="text-lg font-semibold tracking-tight" data-i18n={`exp.${job.id}.role`}>{job.role}</h3>
-                <p class="text-sm font-medium bg-gradient-to-r from-blue-500 via-violet-500 to-emerald-500 bg-clip-text text-transparent" data-i18n={`exp.${job.id}.company`}>{job.company}</p>
+          <div class="flex items-center gap-4">
+            <span
+              class="text-[14px] sm:text-[15px] text-[#a1a1aa] font-normal tracking-[-0.01em]"
+              data-i18n={`exp.${job.id}.period`}
+            >
+              {job.period}
+            </span>
+            <span class="exp-chevron w-7 h-7 rounded-full border border-white/[0.12] flex items-center justify-center text-white/70 group-hover:text-white group-hover:border-white/30 transition-colors">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="exp-chevron-icon"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
+          </div>
+        </button>
+
+        <!-- Hover Floating Tilted Preview Card (Exact Homage to Video 00:14) -->
+        <div
+          class="hidden xl:grid pointer-events-none absolute right-[230px] top-1/2 -translate-y-1/2 z-30 opacity-0 scale-95 rotate-[4deg] group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-[6deg] transition-all duration-300 bg-[#f4f4f5] text-[#18181b] p-2.5 rounded-[16px] shadow-[0_24px_55px_rgba(0,0,0,0.5)] border border-white/40 grid-cols-3 gap-2 w-[300px]"
+          aria-hidden="true"
+        >
+          {job.tags.slice(0, 3).map((tName, tIdx) => (
+            <div class="bg-white rounded-[10px] p-2.5 border border-black/[0.06] flex flex-col justify-between aspect-[9/13]">
+              <div class="flex items-center justify-between">
+                <span class="w-3 h-1 rounded-full bg-[#18181b]/20" />
+                <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
               </div>
-              <span class="text-xs text-muted-foreground whitespace-nowrap px-3 py-1 rounded-full bg-muted/50 border border-border/40" data-i18n={`exp.${job.id}.period`}>{job.period}</span>
-            </div>
-
-            <ul class="space-y-2">
-              {job.description.map((desc, dIdx) => (
-                <li class="text-sm text-muted-foreground leading-relaxed flex gap-2">
-                  <span class="text-primary mt-1.5 shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </span>
-                  <span data-i18n={`exp.${job.id}.desc.${dIdx}`}>{desc}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="flex flex-wrap gap-2 mt-4">
-              {job.tags.map((tag) => (
-                <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-secondary/50 text-muted-foreground border border-border/40 group-hover:border-primary/20 transition-colors">
-                  {tag}
+              <div class="my-auto">
+                <span class="block text-[8px] uppercase tracking-[0.04em] text-[#71717a]">Core Stack</span>
+                <span class="block text-[11.5px] font-bold tracking-[-0.02em] text-[#18181b] mt-0.5 leading-tight">
+                  {tName}
                 </span>
-              ))}
+                <div class="mt-2 h-1 w-full rounded-full bg-[#e4e4e7] overflow-hidden">
+                  <div class="h-full bg-[#18181b] rounded-full" style={`width: ${90 - tIdx * 10}%`} />
+                </div>
+              </div>
+              <span class="text-[8px] text-[#52525b] truncate">{job.company}</span>
             </div>
+          ))}
+        </div>
+
+        <!-- Expandable Achievements & Stack Tags (Smooth Grid Collapse + Staggered Reveal) -->
+        <div class="exp-details-collapse">
+          <div class="overflow-hidden">
+            <div class="exp-details pt-5 pr-0 lg:pr-24">
+              <ul class="space-y-2.5 text-[14px] sm:text-[14.5px] text-[#d4d4d8]/85 leading-[1.65] max-w-[820px]">
+                {job.description.map((desc, dIdx) => (
+                  <li
+                    class="exp-item-enter flex items-start gap-3"
+                    style={`transition-delay: ${35 + dIdx * 35}ms;`}
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/45 mt-2.5 shrink-0" />
+                    <span data-i18n={`exp.${job.id}.desc.${dIdx}`}>{desc}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="flex flex-wrap gap-2 mt-5">
+                {job.tags.map((tag, tIdx) => (
+                  <span
+                    class="exp-item-enter px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/[0.1] text-[12px] font-normal text-white/85"
+                    style={`transition-delay: ${90 + tIdx * 20}ms;`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Honors, Certifications & Education Row -->
+  <div class="mt-14 pt-2">
+    <h3
+      class="text-[12.5px] uppercase tracking-[0.06em] text-[#a1a1aa] mb-5"
+      data-i18n="experience.awards"
+    >
+      Honors, Certifications & Education
+    </h3>
+    <div class="grid md:grid-cols-3 gap-4">
+      {awards.map((award, aIdx) => (
+        <div class="rounded-[14px] bg-white/[0.03] border border-white/[0.08] p-5 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-[0.05em] text-[#a1a1aa]">{award.year} · Honor</span>
+            <p class="text-[16px] font-medium text-white mt-1.5" data-i18n={`award.${aIdx}.title`}>
+              {award.title}
+            </p>
+            <p class="text-[13px] text-[#a1a1aa] mt-1.5 leading-relaxed" data-i18n={`award.${aIdx}.desc`}>
+              {award.description}
+            </p>
           </div>
         </div>
       ))}
+
+      {certifications.map((cert, cIdx) => (
+        <div class="rounded-[14px] bg-white/[0.03] border border-white/[0.08] p-5 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] uppercase tracking-[0.05em] text-[#a1a1aa]">{cert.year} · Certification</span>
+            <p class="text-[16px] font-medium text-white mt-1.5" data-i18n={`cert.${cIdx}.title`}>
+              {cert.title}
+            </p>
+            <p class="text-[13px] text-[#a1a1aa] mt-1.5" data-i18n={`cert.${cIdx}.platform`}>
+              {cert.platform} · {cert.year}
+            </p>
+          </div>
+        </div>
+      ))}
+
+      <div class="rounded-[14px] bg-white/[0.03] border border-white/[0.08] p-5 flex flex-col justify-between">
+        <div>
+          <span class="text-[11px] uppercase tracking-[0.05em] text-[#a1a1aa]">{personalInfo.education.year} · Degree</span>
+          <p class="text-[16px] font-medium text-white mt-1.5" data-i18n="edu.degree">
+            {personalInfo.education.degree}
+          </p>
+          <p class="text-[13px] text-[#a1a1aa] mt-1.5" data-i18n="edu.university">
+            {personalInfo.education.university} · {personalInfo.education.year}
+          </p>
+        </div>
+      </div>
     </div>
-
-    <!-- Awards -->
-    {awards.length > 0 && (
-      <div class="mt-20 max-w-4xl mx-auto">
-        <h3 class="text-xl font-semibold tracking-tight text-center mb-8" data-i18n="experience.awards">Reconocimientos</h3>
-        <div class="awards-grid grid md:grid-cols-2 gap-4">
-          {awards.map((award, aIdx) => (
-            <div class="award-card p-5 rounded-2xl border border-border/40 bg-gradient-to-br from-background/40 to-background/20 hover:bg-background transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-primary/20">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500/20 to-yellow-500/10 flex items-center justify-center shrink-0 border border-amber-500/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><polyline points="6 9 12 15 18 9"/><path d="M22 20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>
-                </div>
-                <div>
-                  <p class="font-medium text-sm" data-i18n={`award.${aIdx}.title`}>{award.title}</p>
-                  <p class="text-xs text-muted-foreground mt-1" data-i18n={`award.${aIdx}.desc`}>{award.description}</p>
-                  <span class="text-[11px] text-primary font-medium mt-1 block">{award.year}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    )}
-
-    <!-- Certifications -->
-    {certifications.length > 0 && (
-      <div class="mt-12 max-w-4xl mx-auto">
-        <h3 class="text-lg font-semibold tracking-tight text-center mb-6" data-i18n="experience.certifications">Certificaciones</h3>
-        <div class="certs-grid grid md:grid-cols-2 gap-4">
-          {certifications.map((cert, cIdx) => (
-            <div class="cert-card p-5 rounded-2xl border border-border/40 bg-gradient-to-br from-background/40 to-background/20 hover:bg-background transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-primary/20">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-500/20 to-blue-500/10 flex items-center justify-center shrink-0 border border-sky-500/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-sky-500"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-                </div>
-                <div>
-                  <p class="font-medium text-sm" data-i18n={`cert.${cIdx}.title`}>{cert.title}</p>
-                  <p class="text-xs text-muted-foreground mt-1" data-i18n={`cert.${cIdx}.platform`}>{cert.platform}</p>
-                  <span class="text-[11px] text-primary font-medium mt-1 block">{cert.year}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    )}
+  </div>
   </div>
 </section>
+
+<script>
+  const expRows = document.querySelectorAll<HTMLElement>(".exp-row");
+
+  expRows.forEach((row) => {
+    const toggle = row.querySelector<HTMLButtonElement>(".exp-row-toggle");
+
+    toggle?.addEventListener("click", () => {
+      const isExpanded = row.dataset.open === "true";
+      const next = !isExpanded;
+      row.dataset.open = next ? "true" : "false";
+      toggle.setAttribute("aria-expanded", next ? "true" : "false");
+    });
+  });
+</script>

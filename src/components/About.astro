@@ -1,67 +1,11 @@
 ---
-import { personalInfo, softSkills } from "../data/portfolio";
+import { personalInfo } from "../data/portfolio";
 ---
 
-<section id="about" class="py-32 relative">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="about-reveal text-xs font-medium text-primary uppercase tracking-widest" data-i18n="about.section">Sobre mí</span>
-        <h2 class="about-reveal text-3xl md:text-4xl font-bold tracking-tight mt-4 mb-8">
-          <span data-i18n="about.title">Senior Frontend & Full Stack Engineer con 10+ años de experiencia</span>
-        </h2>
-      </div>
-
-      <p class="about-reveal text-base md:text-lg text-muted-foreground leading-relaxed mb-8" data-i18n="about.bio">
-        {personalInfo.bio}
-      </p>
-
-      <!-- Educación & Certificación -->
-      <div class="about-reveal grid sm:grid-cols-2 gap-4">
-        <div class="flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-gradient-to-br from-muted/30 to-transparent">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-emerald-500/20 flex items-center justify-center shrink-0 border border-primary/10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <div>
-            <p class="font-semibold text-sm">{personalInfo.education.degree}</p>
-            <p class="text-xs text-muted-foreground mt-0.5">{personalInfo.education.university} · {personalInfo.education.year}</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4 p-5 rounded-2xl border border-border/50 bg-gradient-to-br from-muted/30 to-transparent">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500/20 to-blue-500/10 flex items-center justify-center shrink-0 border border-sky-500/20">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-sky-500"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-          </div>
-          <div>
-            <p class="font-semibold text-sm" data-i18n="cert.0.title">Kubernetes para administradores IT esencial</p>
-            <p class="text-xs text-muted-foreground mt-0.5" data-i18n="cert.0.platform">LinkedIn Learning · Oct 2025</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Competencias Clave / Soft Skills -->
-      <div class="about-reveal mt-12">
-        <h3 class="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider" data-i18n="about.soft_skills">Competencias Clave</h3>
-        <div class="flex flex-wrap gap-2.5">
-          {softSkills.map((skill) => (
-            <span class="group px-3.5 py-1.5 rounded-xl border border-border/40 bg-background/40 text-xs text-muted-foreground hover:text-foreground hover:border-primary/40 hover:bg-background/80 transition-all hover:-translate-y-0.5 shadow-sm">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <!-- Core Highlights Pills -->
-      <div class="flex flex-wrap justify-center gap-2.5 mt-10">
-        {[
-          "React", "Angular", "TypeScript", "Blazor", "C# / .NET", 
-          "Zustand", "Playwright", "Agentic SDLC", "Docker", "Kubernetes"
-        ].map((tech) => (
-          <span class="group px-4 py-2 rounded-full bg-secondary/50 border border-border/50 text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_12px_hsl(var(--primary)/0.15)] hover:scale-105 cursor-default">
-            {tech}
-          </span>
-        ))}
-      </div>
-    </div>
+<section id="about" class="py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-lg text-foreground leading-relaxed" data-i18n="about.bio">
+      {personalInfo.bio}
+    </p>
   </div>
 </section>

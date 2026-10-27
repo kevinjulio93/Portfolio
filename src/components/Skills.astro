@@ -1,71 +1,218 @@
 ---
-import { skills } from "../data/portfolio";
+import { services, skills } from "../data/portfolio";
 import { skillIcons } from "../data/skillIcons";
 
-const categories = [
-  { id: "Frontend", key: "skills.cat.frontend", label: "Frontend Engineering & Core" },
-  { id: "AI-First SDLC", key: "skills.cat.aifirst", label: "AI-First SDLC & Agentic Engineering" },
-  { id: "Testing", key: "skills.cat.testing", label: "Testing & Quality Assurance" },
-  { id: "Backend", key: "skills.cat.backend", label: "Backend & APIs" },
-  { id: "DevOps", key: "skills.cat.devops", label: "DevOps, Cloud & Tooling" },
-];
+function getSkillsForService(category: string) {
+  if (category === "Testing") {
+    return skills.filter((s) => s.category === "Testing" || s.category === "DevOps");
+  }
+  return skills.filter((s) => s.category === category);
+}
 ---
 
-<section id="skills" class="py-32 relative bg-gradient-to-b from-muted/30 to-muted/10">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <span class="text-xs font-medium text-primary uppercase tracking-widest" data-i18n="skills.section">Habilidades</span>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4">
-        <span data-i18n="skills.title">Tech Stack & Especialidades</span>
-      </h2>
+<section
+  id="skills"
+  class="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24 py-16 sm:py-24 2xl:py-32 overflow-hidden"
+>
+  <div class="max-w-[2240px] mx-auto">
+  <!-- Watermark + /SERVICE Heading (Exact Match to Shot 1 Image 3) -->
+  <div class="relative select-none pt-2 pb-8 sm:pb-14">
+    <div
+      class="watermark-text text-[clamp(2.5rem,11vw,12.5rem)] leading-none tracking-[0.03em] sm:tracking-[0.04em] truncate"
+      aria-hidden="true"
+      data-i18n="service.watermark"
+    >
+      SERVICE
     </div>
+    <h2
+      class="relative z-10 -mt-4 sm:-mt-9 md:-mt-14 text-[clamp(1.65rem,4vw,3.5rem)] font-medium tracking-[-0.03em] text-[#18181b] dark:text-white"
+      data-i18n="service.slashTitle"
+    >
+      /SERVICE
+    </h2>
+  </div>
 
-    <div class="grid lg:grid-cols-5 gap-10 items-start">
-      <!-- Skills content - left side (3/5) -->
-      <div class="lg:col-span-3 space-y-10">
-        {categories.map((cat) => {
-          const categorySkills = skills.filter((s) => s.category === cat.id);
-          if (categorySkills.length === 0) return null;
+  <!-- Interactive Service Accordion List (Exact Match to Shot 1 Image 3 & Video 00:08-00:10) -->
+  <div id="service-accordion" class="space-y-1">
+    {services.map((item, idx) => {
+      const itemSkills = getSkillsForService(item.skillCategory);
+      const isInitialOpen = idx === 0;
 
-          return (
-            <div class="skill-category">
-              <h3 class="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-violet-500" />
-                <span data-i18n={cat.key}>{cat.label}</span>
-              </h3>
-              <div class="flex flex-wrap gap-2.5">
-                {categorySkills.map((skill) => (
-                  <div class="skill-tag group px-4 py-2.5 rounded-xl border border-border/50 bg-background/60 hover:bg-background hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_20px_hsl(var(--primary)/0.12)] cursor-default">
-                    <span class="inline-flex items-center gap-2.5 text-xs sm:text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
-                      <span class="shrink-0 flex items-center justify-center transition-transform group-hover:scale-110" set:html={skillIcons[skill.name] || ''} />
-                      <span>{skill.name}</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
+      return (
+        <div
+          class="service-accordion-item"
+          data-service-index={idx}
+          data-open={isInitialOpen ? "true" : "false"}
+        >
+          <!-- Collapsed Minimal Row (Smooth Grid Collapse) -->
+          <div class="service-row-collapse">
+            <div class="overflow-hidden">
+              <button
+                type="button"
+                class="service-row-trigger w-full py-6 sm:py-7 px-2 border-b border-[#e5e7eb] dark:border-white/[0.1] flex items-center justify-between text-left cursor-pointer group hover:pl-3 active:scale-[0.995] transition-all duration-200"
+                aria-expanded={isInitialOpen ? "true" : "false"}
+              >
+                <span
+                  class="text-[20px] sm:text-[26px] md:text-[31px] font-normal tracking-[-0.025em] text-[#18181b] dark:text-white uppercase"
+                  data-i18n={item.titleKey}
+                >
+                  {item.title}
+                </span>
+                <span class="w-8 h-8 flex items-center justify-center text-[#18181b] dark:text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
+                </span>
+              </button>
             </div>
-          );
-        })}
-      </div>
+          </div>
 
-      <!-- Photo & Highlights - right side (2/5) -->
-      <div class="lg:col-span-2 flex flex-col items-center lg:items-end sticky top-24">
-        <div class="skill-photo relative w-full max-w-sm rounded-3xl overflow-hidden border border-border/60 bg-gradient-to-br from-background/80 to-muted/40 p-2 shadow-2xl">
-          <div class="relative overflow-hidden rounded-2xl">
-            <img
-              src="/kevin.png"
-              alt="Kevin Julio"
-              class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 hover:scale-105"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80" />
-            <div class="absolute bottom-4 left-4 right-4 text-center">
-              <p class="text-sm font-bold text-foreground">Kevin Andres Julio Marquez</p>
-              <p class="text-xs text-primary font-medium mt-0.5">Senior Frontend & Full Stack Engineer</p>
+          <!-- Expanded Dark Charcoal Card (#1E1E1E) with Choreographed Entrance -->
+          <div class="service-card-collapse">
+            <div class="overflow-hidden">
+              <div
+                class="service-expanded-card service-expanded-surface relative rounded-[16px] bg-[#1e1e1e] text-white p-6 sm:p-8 md:p-10 my-3 shadow-[0_24px_55px_rgba(0,0,0,0.18)]"
+              >
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
+                  <!-- Left Copy + Tech Stack Pills -->
+                  <div class="max-w-[520px] 2xl:max-w-[640px]">
+                    <div class="service-copy-enter">
+                      <h3
+                        class="text-[22px] sm:text-[28px] md:text-[33px] font-medium tracking-[-0.025em] text-white uppercase leading-[1.15]"
+                        data-i18n={item.titleKey}
+                      >
+                        {item.title}
+                      </h3>
+                      <p
+                        class="mt-3 text-[13.5px] sm:text-[14.5px] text-[#a1a1aa] leading-[1.6] max-w-[420px]"
+                        data-i18n={item.descKey}
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+
+                    <!-- Staggered Vector Skill Chips for this Service Domain -->
+                    <div class="mt-6 flex flex-wrap gap-2">
+                      {itemSkills.map((sk, sIdx) => (
+                        <span
+                          class="service-chip-enter inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.07] border border-white/[0.1] text-[12px] font-medium text-white/90 hover:bg-white/[0.14]"
+                          style={`transition-delay: ${55 + sIdx * 18}ms;`}
+                        >
+                          {skillIcons[sk.name] && (
+                            <span
+                              class="w-3.5 h-3.5 flex items-center justify-center shrink-0 [&>svg]:w-3.5 [&>svg]:h-3.5"
+                              set:html={skillIcons[sk.name]}
+                            />
+                          )}
+                          <span>{sk.name}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <!-- Right Area: Tilted 3-Screen Floating UI Preview Card + Close X Button -->
+                  <div class="flex items-center justify-between lg:justify-end gap-4 sm:gap-8">
+                    <!-- Tilted 3-Screen Card -->
+                    <div class="service-preview-enter lg:-mt-8 lg:-mb-2 bg-[#f4f4f5] p-2 sm:p-3 rounded-[16px] sm:rounded-[18px] shadow-[0_22px_50px_rgba(0,0,0,0.36)] border border-white/40 grid grid-cols-3 gap-1.5 sm:gap-2.5 w-full max-w-[320px] sm:max-w-[360px] 2xl:max-w-[420px] text-[#18181b] select-none">
+                      {item.previewScreens.map((scr, sIdx) => (
+                        <div class="bg-white rounded-[12px] p-2.5 shadow-sm border border-black/[0.05] flex flex-col justify-between aspect-[9/15]">
+                          <div class="flex items-center justify-between">
+                            <span class="w-3.5 h-1 rounded-full bg-[#18181b]/20" />
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
+                          </div>
+                          <div class="my-auto py-1.5">
+                            <span class="block text-[9px] uppercase tracking-[0.04em] text-[#71717a] truncate">
+                              {scr.label}
+                            </span>
+                            <span class="block text-[14px] sm:text-[15px] font-bold tracking-[-0.03em] text-[#18181b] mt-0.5">
+                              {scr.metric}
+                            </span>
+                            <div class="mt-2 space-y-1">
+                              <div class="h-1.5 w-full rounded-full bg-[#f4f4f5] overflow-hidden">
+                                <div
+                                  class="h-full rounded-full bg-[#18181b]"
+                                  style={`width: ${85 - sIdx * 12}%`}
+                                />
+                              </div>
+                              <div class="h-1.5 w-3/4 rounded-full bg-[#e4e4e7]" />
+                            </div>
+                          </div>
+                          <div class="pt-1 border-t border-black/[0.05]">
+                            <span class="block text-[8.5px] font-medium text-[#52525b] truncate">
+                              {scr.sub}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <!-- Close X Button -->
+                    <button
+                      type="button"
+                      class="service-close-btn w-10 h-10 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 active:scale-95 transition-all cursor-pointer shrink-0"
+                      aria-label="Collapse service"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      );
+    })}
+  </div>
   </div>
 </section>
+
+<script>
+  const accordionItems = document.querySelectorAll<HTMLElement>(".service-accordion-item");
+
+  function setActiveService(targetIndex: number | null) {
+    accordionItems.forEach((item, idx) => {
+      const trigger = item.querySelector<HTMLElement>(".service-row-trigger");
+      const isOpen = idx === targetIndex;
+      item.dataset.open = isOpen ? "true" : "false";
+      trigger?.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+
+  accordionItems.forEach((item, idx) => {
+    const trigger = item.querySelector<HTMLButtonElement>(".service-row-trigger");
+    const closeBtn = item.querySelector<HTMLButtonElement>(".service-close-btn");
+
+    trigger?.addEventListener("click", () => {
+      setActiveService(idx);
+    });
+
+    closeBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setActiveService(null);
+    });
+  });
+</script>
