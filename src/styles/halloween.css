@@ -1,0 +1,160 @@
+/* Halloween 2026 Editorial Theme Overlay */
+
+html.halloween-mode #hero {
+  background:
+    radial-gradient(circle 420px at 50% 44%, rgba(255, 94, 26, 0.17) 0%, rgba(180, 38, 10, 0.06) 52%, transparent 78%),
+    radial-gradient(ellipse 90% 45% at 50% 100%, rgba(255, 85, 0, 0.12) 0%, transparent 70%),
+    #0b0a0e !important;
+}
+
+html.halloween-mode:not(.dark) #hero {
+  background:
+    radial-gradient(circle 430px at 50% 45%, rgba(255, 107, 43, 0.14) 0%, rgba(255, 160, 90, 0.05) 55%, transparent 78%),
+    radial-gradient(ellipse 90% 45% at 50% 100%, rgba(24, 24, 27, 0.08) 0%, transparent 70%),
+    #fbf9f6 !important;
+}
+
+html.halloween-mode .hero-word-outline {
+  -webkit-text-stroke: 2.4px #ff6b2b !important;
+  filter: drop-shadow(0 0 28px rgba(255, 90, 20, 0.28));
+}
+
+html.halloween-mode:not(.dark) .hero-word-outline {
+  -webkit-text-stroke: 2.5px #ea580c !important;
+  filter: none;
+}
+
+html.halloween-mode .hero-word-solid {
+  color: #f7f4f0 !important;
+  text-shadow: 0 10px 35px rgba(0, 0, 0, 0.65);
+}
+
+html.halloween-mode:not(.dark) .hero-word-solid {
+  color: #18181b !important;
+  text-shadow: none;
+}
+
+html.halloween-mode #hero-portrait-stage {
+  filter: drop-shadow(0 -12px 44px rgba(255, 94, 26, 0.25));
+}
+
+/* Glowing Blood Moon halo behind portrait & letters */
+.hw-blood-moon {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: 470px;
+  height: 470px;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background: radial-gradient(circle at 38% 35%, rgba(255, 138, 60, 0.34) 0%, rgba(235, 68, 18, 0.18) 48%, rgba(120, 20, 8, 0.04) 74%, transparent 100%);
+  box-shadow: 0 0 110px 24px rgba(255, 82, 20, 0.16), inset 0 0 45px rgba(255, 150, 80, 0.22);
+  border: 1px solid rgba(255, 120, 50, 0.18);
+  pointer-events: none;
+  z-index: 6;
+  animation: moonPulse 6s ease-in-out infinite alternate;
+}
+
+html.halloween-mode:not(.dark) .hw-blood-moon {
+  background: radial-gradient(circle at 38% 35%, rgba(255, 120, 45, 0.22) 0%, rgba(234, 88, 12, 0.08) 55%, transparent 78%);
+  box-shadow: 0 0 60px 10px rgba(234, 88, 12, 0.12);
+  border: 1px solid rgba(234, 88, 12, 0.18);
+}
+
+@keyframes moonPulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* Volumetric fog layers at the base of the Hero */
+.hw-fog-layer {
+  position: absolute;
+  inset-inline: -10%;
+  bottom: 0;
+  height: 290px;
+  pointer-events: none;
+  z-index: 22;
+  background:
+    radial-gradient(ellipse 45% 65% at 22% 92%, rgba(255, 115, 45, 0.14) 0%, transparent 72%),
+    radial-gradient(ellipse 55% 75% at 52% 100%, rgba(24, 20, 28, 0.88) 0%, transparent 75%),
+    radial-gradient(ellipse 48% 65% at 82% 90%, rgba(255, 95, 25, 0.12) 0%, transparent 72%),
+    linear-gradient(to top, rgba(11, 10, 14, 0.95) 0%, rgba(11, 10, 14, 0.48) 48%, transparent 100%);
+}
+
+html.halloween-mode:not(.dark) .hw-fog-layer {
+  height: 220px;
+  background:
+    radial-gradient(ellipse 45% 65% at 22% 92%, rgba(234, 88, 12, 0.11) 0%, transparent 72%),
+    radial-gradient(ellipse 55% 75% at 52% 100%, rgba(251, 249, 246, 0.85) 0%, transparent 75%),
+    linear-gradient(to top, rgba(251, 249, 246, 0.92) 0%, rgba(251, 249, 246, 0.35) 50%, transparent 100%);
+}
+
+/* Lantern ring around spotlight */
+.hw-lantern-ring {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 28;
+  background: radial-gradient(circle, rgba(255, 136, 56, 0.22) 0%, rgba(255, 85, 0, 0.08) 55%, transparent 74%);
+  border: 1px solid rgba(255, 136, 56, 0.28);
+  box-shadow: 0 0 50px rgba(255, 94, 26, 0.22);
+  mix-blend-mode: screen;
+  transition: left 0.12s ease-out, top 0.12s ease-out;
+}
+
+html.halloween-mode:not(.dark) .hw-lantern-ring {
+  width: 280px;
+  height: 280px;
+  border: 1.5px dashed rgba(234, 88, 12, 0.45);
+  box-shadow: 0 0 40px rgba(234, 88, 12, 0.18);
+  mix-blend-mode: normal;
+}
+
+/* Architectural corner cobwebs */
+.hw-cobweb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 240px;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 15;
+}
+
+html.halloween-mode:not(.dark) .hw-cobweb {
+  opacity: 0.28;
+}
+
+/* Embers and Bats floating animation */
+@keyframes emberRise {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 0.9; }
+  80% { opacity: 0.7; }
+  100% { transform: translateY(-160px) scale(0.6); opacity: 0; }
+}
+
+.hw-ember {
+  position: absolute;
+  border-radius: 999px;
+  background: #ff7a33;
+  box-shadow: 0 0 14px 3px rgba(255, 94, 26, 0.85);
+  animation: emberRise 4s infinite linear;
+}
+
+@keyframes batFlutter {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.hw-bat {
+  position: absolute;
+  fill: #ff6b2b;
+  filter: drop-shadow(0 0 8px rgba(255, 94, 26, 0.5));
+  opacity: 0.88;
+  animation: batFlutter 3s infinite ease-in-out;
+}
